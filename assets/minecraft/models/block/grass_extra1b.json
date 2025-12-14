@@ -1,0 +1,17 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"extra": "block/grass_extra"
+	},
+	"elements": [
+		{
+			"from": [0, 16.8, 0],
+			"to": [16, 16.8, 16],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#extra", "cullface": "up", "tintindex": 0}
+			}
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/tinted_flower_pot_cross",
+	"textures": {
+		"particle": "block/red_mushroom",
+		"plant": "block/red_mushroom"
+	}
+}

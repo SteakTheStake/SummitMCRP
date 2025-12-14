@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/grass_blades_bottom_sm",
+		"particle": "block/grass_blades_bottom_sm",
+		"extra": "block/grass_extra"
+	},
+	"elements": [
+		{
+			"from": [0, 16.5, 0],
+			"to": [16, 16.5, 16],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#extra", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [5.6585, 17, -3.21684],
+			"to": [17.6585, 17, 8.78316],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [0, 1, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1", "cullface": "up"}
+			}
+		}
+	]
+}

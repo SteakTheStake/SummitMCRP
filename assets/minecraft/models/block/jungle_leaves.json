@@ -1,0 +1,7 @@
+{
+    "parent":"block/leaves_extra1",
+    "textures": {
+	"all":"block/jungle_leaves",
+	"extra": "block/extra/jungle_leaves_extra"
+    }
+}

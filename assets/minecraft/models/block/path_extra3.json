@@ -1,0 +1,40 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/dirt_path",
+		"cross": "block/dirt_path"
+	},
+	"elements": [
+		{
+			"from": [11, 15, -3],
+			"to": [11, 25, 13],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [11, 25, 5]},
+			"faces": {
+				"east": {"uv": [0, 3.25, 16, 13.25], "texture": "#cross", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [16, 3.25, 0, 13.25], "texture": "#cross", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [1, 15, 13.5],
+			"to": [17, 24, 13.5],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [9, 24, 13.5]},
+			"faces": {
+				"north": {"uv": [16, 3.25, 0, 12.25], "texture": "#cross", "cullface": "up", "tintindex": 0},
+				"south": {"uv": [0, 3.25, 16, 12.25], "texture": "#cross", "cullface": "up", "tintindex": 0}
+			}
+		},
+		{
+			"from": [2.5, 15, -1],
+			"to": [2.5, 23, 15],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [2.5, 23, 7]},
+			"faces": {
+				"east": {"uv": [16, 3.25, 0, 11.25], "texture": "#cross", "cullface": "up", "tintindex": 0},
+				"west": {"uv": [0, 3.25, 16, 11.25], "texture": "#cross", "cullface": "up", "tintindex": 0}
+			}
+		}
+	]
+}

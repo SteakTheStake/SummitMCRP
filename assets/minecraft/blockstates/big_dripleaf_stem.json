@@ -1,0 +1,1 @@
+{"variants":{"facing=east":{"model":"block/big_dripleaf_stem","y":90},"facing=north":{"model":"block/big_dripleaf_stem"},"facing=south":{"model":"block/big_dripleaf_stem","y":180},"facing=west":{"model":"block/big_dripleaf_stem","y":270}}}

@@ -1,0 +1,19 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/extra/bamboo_leaves_extra1",
+		"extra1": "block/extra/bamboo_leaves_extra1"
+	},
+	"elements": [
+		{
+			"from": [8, 4, -2],
+			"to": [8, 12, 6],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#extra1", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#extra1", "tintindex": 0}
+			}
+		}
+	]
+}

@@ -1,0 +1,103 @@
+{
+	"credit": "Made with Blockbench",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "base",
+			"id": "base",
+			"invertAxis": "xy",
+			"translate": [-8, 0, -8],
+			"rotate": [-180, 0, 0],
+			"boxes": [
+				{
+					"coordinates": [-7, -1, 9, 14, 1, 14],
+					"uvNorth": [14, 33, 28, 34],
+					"uvEast": [0, 33, 14, 34],
+					"uvSouth": [42, 33, 56, 34],
+					"uvWest": [28, 33, 42, 34],
+					"uvUp": [28, 33, 14, 19],
+					"uvDown": [42, 19, 28, 33]
+				},
+				{
+					"coordinates": [-7, -10, 10, 1, 9, 12],
+					"uvEast": [15, 4, 27, 14],
+					"uvWest": [29, 34, 41, 43],
+					"uvDown": [42, 20, 41, 32]
+				},
+				{
+					"coordinates": [6, -10, 10, 1, 9, 12],
+					"uvEast": [1, 34, 13, 43],
+					"uvWest": [15, 4, 27, 14],
+					"uvDown": [29, 20, 28, 32]
+				},
+				{
+					"coordinates": [-7, -10, 22, 14, 9, 1],
+					"uvNorth": [14, 4, 28, 14],
+					"uvEast": [0, 34, 1, 43],
+					"uvSouth": [42, 34, 56, 43],
+					"uvWest": [41, 34, 42, 43],
+					"uvDown": [42, 19, 28, 20]
+				},
+				{
+					"coordinates": [-7, -10, 9, 14, 9, 1],
+					"uvNorth": [14, 34, 28, 43],
+					"uvEast": [13, 34, 14, 43],
+					"uvSouth": [14, 5, 28, 14],
+					"uvWest": [28, 34, 29, 43],
+					"uvDown": [42, 32, 28, 33]
+				}
+			],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		},
+		{
+			"part": "lid",
+			"id": "lid",
+			"invertAxis": "xy",
+			"translate": [-8, -9, -7],
+			"rotate": [-180, 0, 0],
+			"boxes": [
+				{
+					"coordinates": [-7, 4, 7, 14, 5, 14],
+					"uvNorth": [14, 14, 28, 19],
+					"uvEast": [0, 14, 14, 19],
+					"uvSouth": [42, 14, 56, 19],
+					"uvWest": [28, 14, 42, 19],
+					"uvUp": [28, 14, 14, 0],
+					"uvDown": [42, 0, 28, 14]
+				}
+			],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		},
+		{
+			"part": "knob",
+			"id": "knob",
+			"invertAxis": "xy",
+			"translate": [-8, -8, -8],
+			"rotate": [-180, 0, 0],
+			"boxes": [
+				{
+					"coordinates": [-1, 6, 23, 2, 4, 1],
+					"uvNorth": [1, 1, 3, 5],
+					"uvEast": [0, 1, 1, 5],
+					"uvSouth": [4, 1, 6, 5],
+					"uvWest": [3, 1, 4, 5],
+					"uvUp": [3, 1, 1, 0],
+					"uvDown": [5, 0, 3, 1]
+				}
+			],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		}
+	]
+}

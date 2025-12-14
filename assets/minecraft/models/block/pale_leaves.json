@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/leaves_extra1",
+	"textures": {
+		"all": "block/pale_oak_leaves",
+		"extra": "block/extra/pale_oak_leaves"
+	}
+}

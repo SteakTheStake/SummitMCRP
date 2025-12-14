@@ -1,0 +1,11 @@
+{
+   "targets": [
+      "minecraft:grass_block",
+      "minecraft:short_grass",
+      "minecraft:tall_grass"
+   ],
+   "colormap": {
+      "0": "minecraft:grass",
+      "2": "minecraft:dirt"
+   }
+}

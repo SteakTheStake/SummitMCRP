@@ -1,0 +1,8 @@
+{
+   "targets": [
+      "minecraft:gravel",
+      "minecraft:mud",
+      "minecraft:clay"
+   ],
+   "colormap": "minecraft:wet"
+}

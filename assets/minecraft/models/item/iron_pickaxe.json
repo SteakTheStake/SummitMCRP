@@ -1,0 +1,12 @@
+{
+	"credit": "Made for Realism Mats Texture Pack",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "item/iron_pickaxe"
+	},
+	"display": {
+		"fixed": {
+			"scale": [1.6, 1.6, 1.6]
+		}
+	}
+}

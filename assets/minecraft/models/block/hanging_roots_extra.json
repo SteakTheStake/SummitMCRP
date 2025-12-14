@@ -1,0 +1,30 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/hanging_roots",
+		"cross": "block/hanging_roots"
+	},
+	"elements": [
+		{
+			"from": [0.8, -8, 8],
+			"to": [15.2, 0, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 10.78125], "texture": "#cross", "cullface": "down"},
+				"south": {"uv": [16, 0, 0, 10.78125], "texture": "#cross", "cullface": "down"}
+			}
+		},
+		{
+			"from": [8, -10, 0.8],
+			"to": [8, 0, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 10.78125], "texture": "#cross", "cullface": "down"},
+				"west": {"uv": [16, 0, 0, 10.78125], "texture": "#cross", "cullface": "down"}
+			}
+		}
+	]
+}

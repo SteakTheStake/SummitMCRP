@@ -1,0 +1,17 @@
+{
+   "targets": [
+      "minecraft:coal_ore",
+      "minecraft:lapis_ore",
+      "minecraft:copper_ore",
+      "minecraft:iron_ore",
+      "minecraft:gold_ore",
+      "minecraft:emerald_ore",
+      "minecraft:diamond_ore",
+      "minecraft:birch_log",
+      "minecraft:dirt",
+      "minecraft:grass_block",
+      "minecraft:oak_leaves",
+      "minecraft:birch_leaves"
+   ],
+   "render_type": "cutout_mipped"
+}

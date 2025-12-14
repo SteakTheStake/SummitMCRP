@@ -1,0 +1,6 @@
+{
+    "x_axis": "biome_id",
+    "y_axis": "1 - ((DAY_TIME/24000)%1)",
+    "biome_id_mapper": "minecraft:vanilla_biomes",
+    "biome_blend": true
+}

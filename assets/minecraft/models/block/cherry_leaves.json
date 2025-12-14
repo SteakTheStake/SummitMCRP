@@ -1,0 +1,7 @@
+{
+    "parent":"block/leaves_extra1_t",
+    "textures": {
+	"all":"block/cherry_leaves",
+	"extra": "block/extra/cherry_leaves_extra"
+    }
+}

@@ -1,0 +1,70 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/kelp_plant",
+		"cross": "block/kelp_plant"
+	},
+	"elements": [
+		{
+			"from": [8, 0, -3],
+			"to": [8, 16, 19],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"west": {"uv": [16, 0, 0, 15], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [8, 0, -3],
+			"to": [8, 16, 19],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0},
+				"west": {"uv": [16, 0, 0, 15], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [-3, -2.61824, 6.90676],
+			"to": [19, 13.38176, 6.90676],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, -1.525, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 15], "texture": "#cross", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [-3, -2.61824, 8.90676],
+			"to": [19, 13.38176, 8.90676],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, -1.525, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 15], "texture": "#cross", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [-6.90676, 8.56824, -3],
+			"to": [9.09324, 8.56824, 19],
+			"shade": false,
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8, 7.475, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [16, 0, 0, 15], "rotation": 270, "texture": "#cross", "tintindex": 0},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#cross", "tintindex": 0}
+			}
+		},
+		{
+			"from": [6.90676, 8.38176, -3],
+			"to": [22.90676, 8.38176, 19],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 7.475, 8], "rescale": true},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#cross", "tintindex": 0},
+				"down": {"uv": [16, 0, 0, 15], "rotation": 90, "texture": "#cross", "tintindex": 0}
+			}
+		}
+	]
+}
