@@ -1,25 +1,18 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
-	"parent": "block/tinted_cross",
+	"parent": "minecraft:block/tinted_cross",
 	"textures": {
-		"particle": "block/large_fern_top",
-		"cross": "block/large_fern_top"
+		"1": "block/fern",
+		"particle": "block/fern"
 	},
 	"elements": [
 		{
-			"from": [0, 0, 9],
-			"to": [16, 16, 9],
+			"from": [0, 0, 0],
+			"to": [16, 0, 16],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#cross"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#cross"}
-			}
-		},
-		{
-			"from": [8, 0, 1],
-			"to": [8, 16, 17],
-			"faces": {
-				"east": {"uv": [0, 0, 16, 16], "texture": "#cross"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#cross"}
+				"up": {"uv": [0, 0, 0, 0], "texture": "#1"},
+				"down": {"uv": [0, 0, 0, 0], "texture": "#1"}
 			}
 		}
 	]

@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textureSize": [256, 256],
-	"texture": "textures/entity/villager/sleeping_villager.png",
+	"texture": "textures/entity/villager/villager_sleeping.png",
 	"models": [
 		{
 			"part": "head",
@@ -488,12 +488,12 @@
 					"boxes": [
 						{
 							"coordinates": [-1, -1.5, -2, 2, 4, 2],
-							"uvNorth": [97, 49, 105, 65],
-							"uvEast": [89, 49, 97, 65],
-							"uvSouth": [113, 49, 121, 65],
-							"uvWest": [105, 49, 113, 65],
-							"uvUp": [105, 49, 97, 41],
-							"uvDown": [113, 41, 105, 49]
+							"uvNorth": [0, 0, 1, 1],
+							"uvEast": [0, 0, 1, 1],
+							"uvSouth": [0, 0, 1, 1],
+							"uvWest": [0, 0, 1, 1],
+							"uvUp": [0, 0, 1, 1],
+							"uvDown": [0, 0, 1, 1]
 						}
 					]
 				},
@@ -627,7 +627,7 @@
 					"boxes": [
 						{
 							"coordinates": [-2, -12, -2, 4, 12, 4],
-							"uvNorth": [16, 104, 32, 152],
+							"uvNorth": [32, 104, 16, 152],
 							"uvEast": [0, 104, 16, 152],
 							"uvSouth": [48, 104, 64, 152],
 							"uvWest": [32, 104, 48, 152],
