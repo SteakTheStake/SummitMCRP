@@ -1,0 +1,8 @@
+{
+    id: "summitMC",
+    version: 13,
+    capabilities: ["FileFilter", "DirFilter"],
+    conf: {
+        voodooTotemOUndying: false
+    }
+}
