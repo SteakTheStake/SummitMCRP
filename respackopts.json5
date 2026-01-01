@@ -1,8 +1,16 @@
 {
-    id: "summitMC",
+    id: "summitMc",
     version: 13,
-    capabilities: ["FileFilter", "DirFilter"],
+    capabilities: [
+        "FileFilter",
+        "DirFilter"
+    ],
     conf: {
-        voodooTotemOUndying: false
+        packOptional: {
+            totemOfUndying: [
+                "normal",
+                "creepy"
+            ]
+        }
     }
 }
