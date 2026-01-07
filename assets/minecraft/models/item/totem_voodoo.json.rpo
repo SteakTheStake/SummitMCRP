@@ -1,4 +1,0 @@
-{
-    condition packOptional.voodoototem,
-    fallbacks assetsminecraftmodelsitemtotemvoodoo.json
-}
