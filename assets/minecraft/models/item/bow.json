@@ -1,1 +1,56 @@
-{"parent":"item/generated","textures":{"layer0":"item/bow"},"overrides":[{"predicate":{"pulling":1},"model":"item/bow_pulling_0"},{"predicate":{"pulling":1,"pull":0.65},"model":"item/bow_pulling_1"},{"predicate":{"pulling":1,"pull":0.9},"model":"item/bow_pulling_2"}],"display":{"thirdperson_righthand":{"rotation":[-80,260,-40],"translation":[0,-2,4.5],"scale":[1.3,1.3,1.3]},"thirdperson_lefthand":{"rotation":[-180,260,-40],"translation":[0,-2,4.5],"scale":[1.3,1.3,1.3]},"firstperson_righthand":{"rotation":[0,-90,25],"translation":[1.13,3.2,1.13],"scale":[1.3,1.3,1.3]},"firstperson_lefthand":{"rotation":[0,90,-25],"translation":[1.13,3.2,1.13],"scale":[1.3,1.3,1.3]},"ground":{"rotation":[0,0,-28]},"head":{"rotation":[0,-90,25],"translation":[0,3.2,1.13],"scale":[1.3,1.3,1.3]},"fixed":{"translation":[0,0,-0.25],"scale":[2,2,2]}}}
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/bow"
+	},
+	"overrides": [
+		{"predicate": {"pulling": 1}, "model": "item/bow_pulling_0"},
+		{"predicate": {"pulling": 1, "pull": 0.65}, "model": "item/bow_pulling_1"},
+		{"predicate": {"pulling": 1, "pull": 0.9}, "model": "item/bow_pulling_2"}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-80, -100, 56],
+			"translation": [0, -0.25, 3.25],
+			"scale": [0.95, 0.95, 0.95]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-80, -100, -48],
+			"translation": [0, 0, 3.5],
+			"scale": [0.95, 0.95, 0.95]
+		},
+		"firstperson_righthand": {
+			"rotation": [-77, -89, 56],
+			"translation": [0.75, 3.5, 4.5],
+			"scale": [0.95, 0.95, 0.95]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-77, -89, -42],
+			"translation": [0.75, 3.5, 4.5],
+			"scale": [0.95, 0.95, 0.95]
+		},
+		"ground": {
+			"rotation": [-90, 6, -20],
+			"translation": [0, -2.5, 0]
+		},
+		"gui": {
+			"rotation": [0, 0, 90],
+			"scale": [0.95, 0.95, 0.95]
+		},
+		"head": {
+			"rotation": [0, -90, -6],
+			"translation": [0, 3.2, -8.12],
+			"scale": [1.3, 1.3, 1.3]
+		},
+		"fixed": {
+			"translation": [0, 0, -0.75],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"on_shelf": {
+			"rotation": [0, 0, -25],
+			"scale": [1.3, 1.3, 1.3]
+		}
+	}
+}
