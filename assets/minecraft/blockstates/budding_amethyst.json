@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            { "model": "block/budding_amethyst"},
+            { "model": "block/budding_amethyst2"},
+            { "model": "block/budding_amethyst3"}
+        ]
+    }
+}
