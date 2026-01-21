@@ -7,10 +7,7 @@
     ],
     conf: {
         packOptional: {
-            totemOfUndying: [
-                "normal",
-                "creepy"
-            ]
+            alternativeTotem: false
         }
     }
 }
