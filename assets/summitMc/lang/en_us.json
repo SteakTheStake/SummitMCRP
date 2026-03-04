@@ -1,0 +1,11 @@
+{
+    "rpo.summitMc": "Summit MC",
+
+    "rpo.summitMc.packOptional": "Optional Features",
+    "rpo.summitMc.packOptional.alternativeTotem": "Creepy Totem Texture",
+    "rpo.summitMc.packOptional.alternativeTotem.tooltip": "Turns totem into voodoo doll",
+
+    "rpo.summitMc.modCompat": "Mod Compatibility",
+    "rpo.summitMc.modCompat.puzzle": "Puzzle Loading Screen",
+    "rpo.summitMc.modCompat.puzzle.tooltip": "Enables the custom loading screen (requires Puzzle mod)"
+}

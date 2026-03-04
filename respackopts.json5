@@ -1,13 +1,269 @@
 {
     id: "summitMc",
-    version: 13,
+    version: 14,
     capabilities: [
         "FileFilter",
         "DirFilter"
     ],
     conf: {
         packOptional: {
-            alternativeTotem: false
+            // Existing option — alternative totem of undying texture
+            alternativeTotem: false,
+
+            // Toggle bushy/3D leaf variants for all tree types
+            bushy3DLeaves: true,
+
+            // Toggle EMF animated mob model reskins (cow, pig, chicken, sheep)
+            customEntityModels: true,
+
+            // Toggle CEM/OptiFine mob models (villager, spider, skeleton, zombie, turtle, etc.)
+            customLegacyCEM: true,
+
+            // Toggle all connected textures (CTM) — stones, woods, grasses, nether, etc.
+            ctmConnectedTextures: true,
+
+            // Toggle 3D grass blade models
+            grassBlades3D: true,
+
+            // Toggle custom dig and step sounds
+            customSounds: true,
+
+            // Toggle Polytone custom colormaps and block color overrides
+            customColormaps: true,
+
+            // Toggle Stellaris sky dimension aesthetics
+            customSky: true,
+
+            // Toggle custom title screen logo and splash
+            customTitleScreen: false,
+
+            // Toggle 3D lily pad model variants
+            lilyPads3D: true,
+
+            // Toggle 3D vine models
+            vines3D: true,
+
+            // Toggle ETF emissive texture overlays (sculk vein, firefly bush, etc.)
+            emissiveTextures: true
+        },
+        modCompat: {
+            // Puzzle mod compatibility
+            puzzle: true,
+
+            // Puzzle mod splash background variants
+            splashBackground1: true,
+            splashBackground2: false,
+            splashBackground3: false,
+
+            // Polytone mod — custom biome/block color overrides
+            polytone: true,
+
+            // Stellaris mod — sky dimension assets
+            stellaris: true,
+
+            // Continuity/CTM mod — connected textures
+            ctm: true
         }
-    }
+    },
+    filters: [
+        // --- packOptional filters ---
+
+        // Bushy 3D leaves: guard the bushy and extra leaf texture variants
+        {
+            condition: "packOptional.bushy3DLeaves",
+            path: "assets/minecraft/textures/block",
+            files: [
+                "acacia_leaves_bushy.png",
+                "acacia_leaves_bushy_n.png",
+                "acacia_leaves_bushy_s.png",
+                "acacia_leaves_extra.png",
+                "acacia_leaves_extra_n.png",
+                "acacia_leaves_extra_s.png",
+                "azalea_leaves_bushy.png",
+                "azalea_leaves_bushy_n.png",
+                "azalea_leaves_bushy_s.png",
+                "azalea_leaves_extra.png",
+                "azalea_leaves_extra_n.png",
+                "azalea_leaves_extra_s.png",
+                "birch_leaves_bushy.png",
+                "birch_leaves_extra.png",
+                "birch_leaves_extra_n.png",
+                "birch_leaves_extra_s.png",
+                "cherry_leaves_bushy.png",
+                "cherry_leaves_bushy_n.png",
+                "cherry_leaves_bushy_s.png",
+                "cherry_leaves_extra.png",
+                "cherry_leaves_extra_n.png",
+                "cherry_leaves_extra_s.png",
+                "dark_oak_leaves_bushy.png",
+                "dark_oak_leaves_bushy_n.png",
+                "dark_oak_leaves_bushy_s.png",
+                "dark_oak_leaves_extra.png",
+                "dark_oak_leaves_extra_n.png",
+                "dark_oak_leaves_extra_s.png",
+                "flowering_azalea_leaves_bushy.png",
+                "flowering_azalea_leaves_bushy_n.png",
+                "flowering_azalea_leaves_bushy_s.png",
+                "flowering_azalea_leaves_extra.png",
+                "flowering_azalea_leaves_extra_n.png",
+                "flowering_azalea_leaves_extra_s.png",
+                "jungle_leaves_bushy.png",
+                "jungle_leaves_bushy_n.png",
+                "jungle_leaves_bushy_s.png",
+                "mangrove_leaves_bushy.png",
+                "mangrove_leaves_bushy_n.png",
+                "mangrove_leaves_bushy_s.png",
+                "mangrove_leaves_extra.png",
+                "mangrove_leaves_extra_n.png",
+                "mangrove_leaves_extra_s.png",
+                "oak_leaves_bushy.png",
+                "oak_leaves_bushy_n.png",
+                "oak_leaves_bushy_s.png",
+                "oak_leaves_extra.png",
+                "oak_leaves_extra_n.png",
+                "oak_leaves_extra_s.png",
+                "pale_oak_leaves_bushy.png",
+                "pale_oak_leaves_bushy_n.png",
+                "pale_oak_leaves_bushy_s.png",
+                "spruce_leaves_bushy.png",
+                "spruce_leaves_bushy_n.png",
+                "spruce_leaves_bushy_s.png",
+                "spruce_leaves_extra.png",
+                "spruce_leaves_extra_n.png",
+                "spruce_leaves_extra_s.png"
+            ]
+        },
+
+        // Custom EMF entity models
+        {
+            condition: "packOptional.customEntityModels",
+            path: "assets/minecraft/emf/mob"
+        },
+
+        // Custom CEM / OptiFine entity models
+        {
+            condition: "packOptional.customLegacyCEM",
+            path: "assets/minecraft/optifine/cem"
+        },
+
+        // Connected textures (entire CTM tree)
+        {
+            condition: "packOptional.ctmConnectedTextures",
+            path: "assets/minecraft/optifine/ctm"
+        },
+
+        // 3D grass blades textures
+        {
+            condition: "packOptional.grassBlades3D",
+            path: "assets/minecraft/textures/block",
+            files: [
+                "grass_blades.png",
+                "grass_blades2.png",
+                "grass_blades2_s.png",
+                "grass_blades3.png",
+                "grass_blades3_s.png",
+                "grass_blades_bottom_lg.png",
+                "grass_blades_bottom_md.png",
+                "grass_blades_bottom_s.png",
+                "grass_blades_bottom_sm.png",
+                "grass_blades_bottom_xs.png",
+                "grass_blades_s.png"
+            ]
+        },
+
+        // Custom sounds
+        {
+            condition: "packOptional.customSounds",
+            path: "assets/minecraft/sounds"
+        },
+
+        // Polytone colormaps and block modifiers
+        {
+            condition: "packOptional.customColormaps",
+            path: "assets/minecraft/polytone"
+        },
+
+        // Stellaris sky aesthetics
+        {
+            condition: "packOptional.customSky",
+            path: "assets/stellaris/sky_aesthetics"
+        },
+
+        // Custom title screen
+        {
+            condition: "packOptional.customTitleScreen",
+            path: "assets/minecraft/textures/gui/title"
+        },
+
+        // 3D lily pad textures
+        {
+            condition: "packOptional.lilyPads3D",
+            path: "assets/minecraft/textures/block",
+            files: [
+                "lily_pad_3d0.png",
+                "lily_pad_3d1.png",
+                "lily_pad_3d2.png",
+                "lily_pad_3d3.png",
+                "lily_pad_3d4.png"
+            ]
+        },
+
+        // 3D vine textures
+        {
+            condition: "packOptional.vines3D",
+            path: "assets/minecraft/textures/block",
+            files: [
+                "vine_3d.png",
+                "vine_back.png"
+            ]
+        },
+
+        // Emissive textures (ETF overlays)
+        {
+            condition: "packOptional.emissiveTextures",
+            path: "assets/minecraft/textures/block",
+            files: [
+                "sculk_vein_e.png",
+                "firefly_bush_emissive.png.mcmeta",
+                "firefly_bush_emissive2.png",
+                "firefly_bush_emissive2.png.mcmeta",
+                "firefly_bush_emissive3.png",
+                "firefly_bush_emissive3.png.mcmeta",
+                "firefly_bush_emissive4.png",
+                "firefly_bush_emissive4.png.mcmeta",
+                "firefly_bush_emissive5.png",
+                "firefly_bush_emissive5.png.mcmeta",
+                "firefly_bush_emissive6.png",
+                "firefly_bush_emissive6.png.mcmeta",
+                "firefly_bush_emissive7.png",
+                "firefly_bush_emissive7.png.mcmeta",
+                "firefly_bush_emissive8.png",
+                "firefly_bush_emissive8.png.mcmeta",
+                "firefly_bush_emissive9.png",
+                "firefly_bush_emissive9.png.mcmeta",
+                "firefly_bush_emissive10.png",
+                "firefly_bush_emissive10.png.mcmeta"
+            ]
+        },
+
+        // --- modCompat filters ---
+
+        // Polytone mod assets
+        {
+            condition: "modCompat.polytone",
+            path: "assets/minecraft/polytone"
+        },
+
+        // Stellaris mod assets (models + sky)
+        {
+            condition: "modCompat.stellaris",
+            path: "assets/stellaris"
+        },
+
+        // CTM/Continuity mod assets
+        {
+            condition: "modCompat.ctm",
+            path: "assets/minecraft/optifine/ctm"
+        }
+    ]
 }

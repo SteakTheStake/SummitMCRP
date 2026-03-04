@@ -1,0 +1,87 @@
+{
+  "credit": "SummitMCRP - Custom Animated Sheep Wool Overlay",
+  "texture": "textures/entity/sheep/sheep_fur.png",
+  "textureSize": [64, 32],
+  "models": [
+    {
+      "part": "head",
+      "id": "head",
+      "invertAxis": "z",
+      "translate": [0, 0, 0],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-3, -1, -4, 6, 6, 6], "sizeAdd": 0.5, "textureOffset": [0, 0] }
+      ],
+      "submodels": [],
+      "animations": []
+    },
+    {
+      "part": "body",
+      "id": "body",
+      "invertAxis": "z",
+      "translate": [0, 0, 0],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-4, -8, -5, 8, 16, 6], "sizeAdd": 1.75, "textureOffset": [28, 8] }
+      ],
+      "submodels": [],
+      "animations": [
+        { "head.rx": "head_pitch" },
+        { "head.ry": "head_yaw" },
+        { "body.ty": "if(is_sneaking, 4, 0)" },
+        { "right_front_leg.rx": "sin(limb_swing * 0.6662) * 1.4 * limb_swing_amount * 57.3" },
+        { "left_front_leg.rx": "sin(limb_swing * 0.6662 + PI) * 1.4 * limb_swing_amount * 57.3" },
+        { "right_hind_leg.rx": "sin(limb_swing * 0.6662 + PI) * 1.4 * limb_swing_amount * 57.3" },
+        { "left_hind_leg.rx": "sin(limb_swing * 0.6662) * 1.4 * limb_swing_amount * 57.3" }
+      ]
+    },
+    {
+      "part": "right_front_leg",
+      "id": "right_front_leg",
+      "invertAxis": "z",
+      "translate": [3, -6, -3],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-2, -6, -2, 4, 6, 4], "sizeAdd": 1.75, "textureOffset": [0, 16] }
+      ],
+      "submodels": [],
+      "animations": []
+    },
+    {
+      "part": "left_front_leg",
+      "id": "left_front_leg",
+      "invertAxis": "z",
+      "translate": [-3, -6, -3],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-2, -6, -2, 4, 6, 4], "sizeAdd": 1.75, "textureOffset": [0, 16] }
+      ],
+      "submodels": [],
+      "animations": []
+    },
+    {
+      "part": "right_hind_leg",
+      "id": "right_hind_leg",
+      "invertAxis": "z",
+      "translate": [3, -6, 4],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-2, -6, -2, 4, 6, 4], "sizeAdd": 1.75, "textureOffset": [0, 16] }
+      ],
+      "submodels": [],
+      "animations": []
+    },
+    {
+      "part": "left_hind_leg",
+      "id": "left_hind_leg",
+      "invertAxis": "z",
+      "translate": [-3, -6, 4],
+      "rotate": [0, 0, 0],
+      "boxes": [
+        { "coordinates": [-2, -6, -2, 4, 6, 4], "sizeAdd": 1.75, "textureOffset": [0, 16] }
+      ],
+      "submodels": [],
+      "animations": []
+    }
+  ]
+}

@@ -1,4 +1,3 @@
 {
-    "condition": "modCompat.puzzle",
-    "fallback":  "assets/minecraft/textures/item/totem_of_undying.png"
+    "condition": "modCompat.splashBackground1"
 }
