@@ -3,11 +3,15 @@
 ctm_stitch.py — CTM Tile Stitcher & Resource Pack Exporter
 
 Commands:
-  stitch   Recursively stitch split CTM tiles back into sprite sheets → ctm/indev/
-  export   Zip the resource pack, excluding indev/, git files, and dev-only files
+  stitch        Recursively stitch split CTM tiles → ctm/indev/ sprite sheets
+  pack --mode dev   Same as stitch: tiles in ctm/* → stitched sheets in ctm/indev/
+  pack --mode prod  Reverse: split ctm/indev/ sheets → individual tiles back into ctm/*
+  export        Zip the resource pack, excluding indev/, git files, and dev-only files
 
 Usage:
   python ctm_stitch.py stitch [--ctm-dir PATH] [--out-dir PATH] [--dry-run]
+  python ctm_stitch.py pack --mode dev  [--ctm-dir PATH] [--indev-dir PATH] [--dry-run]
+  python ctm_stitch.py pack --mode prod [--ctm-dir PATH] [--indev-dir PATH] [--dry-run]
   python ctm_stitch.py export [--pack-dir PATH] [--output FILE] [--dry-run]
 """
 
@@ -109,7 +113,7 @@ def stitch_tiles(
             missing.append(str(tile_path))
     if missing:
         print(
-            f"  [SKIP] {name}{suffix}.png — missing tiles:\n"
+            f"  [SKIP] {name}{suffix}.png - missing tiles:\n"
             + "\n".join(f"    {m}" for m in missing)
         )
         return False
@@ -124,7 +128,7 @@ def stitch_tiles(
     if dry_run:
         print(
             f"  [DRY-RUN] Would stitch {len(tile_indices)} tiles "
-            f"→ {sheet_w}x{sheet_h}px : {out_dir / (name + suffix + '.png')}"
+            f"-> {sheet_w}x{sheet_h}px : {out_dir / (name + suffix + '.png')}"
         )
         return True
 
@@ -186,7 +190,7 @@ def cmd_stitch(args):
     print(f"CTM root : {ctm_root}")
     print(f"Output   : {out_root}")
     if args.dry_run:
-        print("(DRY RUN — no files will be written)\n")
+        print("(DRY RUN - no files will be written)\n")
 
     ctm_folders = find_ctm_folders(ctm_root)
     if not ctm_folders:
@@ -211,7 +215,7 @@ def cmd_stitch(args):
         height_str = props.get("height", "")
 
         if not tiles_str or not width_str or not height_str:
-            print(f"[SKIP-INCOMPLETE] {props_path.relative_to(ctm_root)} — missing tiles/width/height")
+            print(f"[SKIP-INCOMPLETE] {props_path.relative_to(ctm_root)} - missing tiles/width/height")
             continue
 
         try:
@@ -219,11 +223,11 @@ def cmd_stitch(args):
             width = int(width_str)
             height = int(height_str)
         except ValueError as exc:
-            print(f"[SKIP-PARSE] {props_path.relative_to(ctm_root)} — {exc}")
+            print(f"[SKIP-PARSE] {props_path.relative_to(ctm_root)} - {exc}")
             continue
 
         if not tile_indices:
-            print(f"[SKIP-EMPTY] {props_path.relative_to(ctm_root)} — no tile indices")
+            print(f"[SKIP-EMPTY] {props_path.relative_to(ctm_root)} - no tile indices")
             continue
 
         # Derive output name from the folder name (matches the .properties stem)
@@ -255,7 +259,255 @@ def cmd_stitch(args):
             else:
                 total_skip += 1
 
-    print(f"\nDone. {total_folders} CTM folders processed — {total_ok} sheets stitched, {total_skip} skipped.")
+    print(f"\nDone. {total_folders} CTM folders processed - {total_ok} sheets stitched, {total_skip} skipped.")
+
+
+# ---------------------------------------------------------------------------
+# Pack command (dev / prod)
+# ---------------------------------------------------------------------------
+
+def split_sheet(
+    sheet_path: Path,
+    name: str,
+    tile_indices: list[int],
+    width: int,
+    height: int,
+    suffix: str,
+    out_dir: Path,
+    dry_run: bool,
+) -> bool:
+    """
+    Split a stitched sprite sheet back into individual numbered tile PNGs.
+    Reverses the work of stitch_tiles().
+    Returns True on success, False if the sheet is missing.
+    """
+    if not sheet_path.exists():
+        print(f"  [SKIP] {sheet_path.name} - sheet not found")
+        return False
+
+    sheet = Image.open(sheet_path).convert("RGBA")
+    sheet_w, sheet_h = sheet.size
+    tile_w = sheet_w // width
+    tile_h = sheet_h // height
+
+    if dry_run:
+        print(
+            f"  [DRY-RUN] Would split {sheet_w}x{sheet_h}px sheet "
+            f"-> {len(tile_indices)} tiles ({tile_w}x{tile_h}px each) : {out_dir}"
+        )
+        return True
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for linear_idx, tile_num in enumerate(tile_indices):
+        row = linear_idx // width
+        col = linear_idx % width
+        box = (col * tile_w, row * tile_h, (col + 1) * tile_w, (row + 1) * tile_h)
+        tile_img = sheet.crop(box)
+        out_path = out_dir / f"{tile_num}{suffix}.png"
+        tile_img.save(out_path, "PNG")
+
+    print(f"  [OK] {len(tile_indices)} tiles -> {out_dir}")
+    return True
+
+
+def find_indev_folders(indev_root: Path) -> list[tuple[Path, str]]:
+    """
+    Walk indev_root. A folder is an indev folder if it contains at least one
+    .png that matches a name without a numeric prefix (i.e. the stitched sheet).
+    Returns list of (folder, stem_name) tuples.
+    """
+    results = []
+    for dirpath, dirnames, filenames in os.walk(indev_root):
+        current = Path(dirpath)
+        # Look for files that look like stitched sheets: <name>.png, <name>_n.png, etc.
+        # Stitched sheet names never start with a digit.
+        sheets = [
+            f for f in filenames
+            if f.endswith(".png") and not f[0].isdigit()
+        ]
+        if sheets:
+            # Derive stem: strip all known suffixes to get the base name
+            stems = set()
+            for s in sheets:
+                stem = s
+                for suf in ("_n.png", "_s.png", "_e.png", ".png"):
+                    if stem.endswith(suf):
+                        stem = stem[: -len(suf)]
+                        break
+                stems.add(stem)
+            for stem in stems:
+                results.append((current, stem))
+    return results
+
+
+def cmd_pack(args):
+    ctm_root = Path(args.ctm_dir).resolve()
+    indev_root = Path(args.indev_dir).resolve()
+    mode = args.mode.lower()
+
+    if mode not in ("dev", "prod"):
+        sys.exit("--mode must be 'dev' or 'prod'")
+
+    if not ctm_root.exists():
+        sys.exit(f"CTM directory not found: {ctm_root}")
+
+    print(f"Mode     : {mode}")
+    print(f"CTM root : {ctm_root}")
+    print(f"Indev    : {indev_root}")
+    if args.dry_run:
+        print("(DRY RUN - no files will be written)\n")
+
+    # ---- DEV: tiles → stitched sheets in indev/ (same as stitch command) ----
+    if mode == "dev":
+        ctm_folders = find_ctm_folders(ctm_root)
+        if not ctm_folders:
+            print("No .properties files found.")
+            return
+
+        total_ok = 0
+        total_skip = 0
+        total_folders = 0
+
+        for folder, props_path in ctm_folders:
+            props = parse_properties(props_path)
+            method = props.get("method", "repeat").lower()
+            if method != "repeat":
+                print(f"[SKIP-METHOD={method}] {props_path.relative_to(ctm_root)}")
+                continue
+
+            tiles_str = props.get("tiles", "")
+            width_str = props.get("width", "")
+            height_str = props.get("height", "")
+
+            if not tiles_str or not width_str or not height_str:
+                print(f"[SKIP-INCOMPLETE] {props_path.relative_to(ctm_root)}")
+                continue
+
+            try:
+                tile_indices = parse_tile_range(tiles_str)
+                width = int(width_str)
+                height = int(height_str)
+            except ValueError as exc:
+                print(f"[SKIP-PARSE] {props_path.relative_to(ctm_root)} - {exc}")
+                continue
+
+            if not tile_indices:
+                continue
+
+            name = props_path.stem
+            rel_folder = folder.relative_to(ctm_root)
+            out_dir = indev_root / rel_folder
+            suffixes = detect_suffixes(folder, tile_indices)
+
+            print(f"\n[{name}]  {rel_folder}  ({width}x{height}, {len(tile_indices)} tiles)")
+            total_folders += 1
+
+            for suffix in suffixes:
+                ok = stitch_tiles(
+                    folder=folder,
+                    name=name,
+                    tile_indices=tile_indices,
+                    width=width,
+                    height=height,
+                    suffix=suffix,
+                    out_dir=out_dir,
+                    dry_run=args.dry_run,
+                )
+                if ok:
+                    total_ok += 1
+                else:
+                    total_skip += 1
+
+        print(f"\nDone. {total_folders} CTM folders -> {total_ok} sheets stitched, {total_skip} skipped.")
+
+    # ---- PROD: indev sheets → individual tiles back into ctm/* ----
+    else:
+        if not indev_root.exists():
+            sys.exit(f"Indev directory not found: {indev_root}")
+
+        # We need the .properties files from ctm/* to know width/height/tiles.
+        # Build a lookup: relative-folder-path → (props, props_path)
+        props_lookup: dict[Path, tuple[dict, Path]] = {}
+        for folder, props_path in find_ctm_folders(ctm_root):
+            rel = folder.relative_to(ctm_root)
+            props_lookup[rel] = (parse_properties(props_path), props_path)
+
+        total_ok = 0
+        total_skip = 0
+        total_folders = 0
+
+        for dirpath, dirnames, filenames in os.walk(indev_root):
+            current = Path(dirpath)
+            rel_folder = current.relative_to(indev_root)
+
+            # Find stitched sheet files: <name>.png (not starting with digit)
+            sheet_bases: dict[str, list[str]] = {}  # stem → [suffixes found]
+            for f in filenames:
+                if not f.endswith(".png") or f[0].isdigit():
+                    continue
+                stem = f
+                found_suf = ""
+                for suf in ("_n.png", "_s.png", "_e.png", ".png"):
+                    if stem.endswith(suf):
+                        stem = stem[: -len(suf)]
+                        found_suf = suf[:-4]  # strip .png → e.g. '_n'
+                        break
+                sheet_bases.setdefault(stem, []).append(found_suf)
+
+            if not sheet_bases:
+                continue
+
+            # Look up the matching properties from ctm/*
+            if rel_folder not in props_lookup:
+                print(f"[SKIP-NO-PROPS] {rel_folder} - no matching .properties in ctm/")
+                continue
+
+            props, props_path = props_lookup[rel_folder]
+            method = props.get("method", "repeat").lower()
+            if method != "repeat":
+                print(f"[SKIP-METHOD={method}] {rel_folder}")
+                continue
+
+            tiles_str = props.get("tiles", "")
+            width_str = props.get("width", "")
+            height_str = props.get("height", "")
+
+            if not tiles_str or not width_str or not height_str:
+                print(f"[SKIP-INCOMPLETE] {rel_folder}")
+                continue
+
+            try:
+                tile_indices = parse_tile_range(tiles_str)
+                width = int(width_str)
+                height = int(height_str)
+            except ValueError as exc:
+                print(f"[SKIP-PARSE] {rel_folder} - {exc}")
+                continue
+
+            out_dir = ctm_root / rel_folder
+
+            for stem, suffixes in sheet_bases.items():
+                print(f"\n[{stem}]  {rel_folder}  ({width}x{height}, {len(tile_indices)} tiles, suffixes: {suffixes})")
+                total_folders += 1
+
+                for suffix in suffixes:
+                    sheet_path = current / f"{stem}{suffix}.png"
+                    ok = split_sheet(
+                        sheet_path=sheet_path,
+                        name=stem,
+                        tile_indices=tile_indices,
+                        width=width,
+                        height=height,
+                        suffix=suffix,
+                        out_dir=out_dir,
+                        dry_run=args.dry_run,
+                    )
+                    if ok:
+                        total_ok += 1
+                    else:
+                        total_skip += 1
+
+        print(f"\nDone. {total_folders} indev sheets processed - {total_ok} split, {total_skip} skipped.")
 
 
 # ---------------------------------------------------------------------------
@@ -332,7 +584,7 @@ def cmd_export(args):
     print(f"Pack dir : {pack_dir}")
     print(f"Output   : {output_file}")
     if args.dry_run:
-        print("(DRY RUN — no zip will be written)\n")
+        print("(DRY RUN - no zip will be written)\n")
 
     included = []
     excluded = []
@@ -374,7 +626,7 @@ def cmd_export(args):
             zf.write(abs_path, rel_path)
 
     size_mb = output_file.stat().st_size / (1024 * 1024)
-    print(f"\nExport complete → {output_file}  ({size_mb:.2f} MB)")
+    print(f"\nExport complete -> {output_file}  ({size_mb:.2f} MB)")
 
 
 # ---------------------------------------------------------------------------
@@ -394,6 +646,37 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=__doc__,
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # --- pack ---
+    pack_p = subparsers.add_parser(
+        "pack",
+        help="Prepare CTM for dev (tiles→indev sheets) or prod (indev sheets→tiles)",
+    )
+    pack_p.add_argument(
+        "--mode",
+        required=True,
+        choices=["dev", "prod"],
+        metavar="MODE",
+        help="'dev' stitches tiles into ctm/indev/ sheets; 'prod' splits indev sheets back into ctm/* tiles",
+    )
+    pack_p.add_argument(
+        "--ctm-dir",
+        default=str(default_ctm),
+        metavar="PATH",
+        help=f"Root CTM folder (default: {default_ctm})",
+    )
+    pack_p.add_argument(
+        "--indev-dir",
+        default=str(default_indev),
+        metavar="PATH",
+        help=f"Indev directory for stitched sheets (default: {default_indev})",
+    )
+    pack_p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what would be done without writing files",
+    )
+    pack_p.set_defaults(func=cmd_pack)
 
     # --- stitch ---
     stitch_p = subparsers.add_parser(
