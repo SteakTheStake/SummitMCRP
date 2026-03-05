@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": {
+      "model": "block/oak_log"
+    }
+  },
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "center": "minecraft:block/oak_log_ctm/2",
+    "top": "minecraft:block/oak_log_ctm/1",
+    "bottom": "minecraft:block/oak_log_ctm/3",
+    "self": "minecraft:block/oak_log_ctm/0",
+    "particle": "minecraft:block/oak_log"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": {
+      "model": "block/stripped_jungle_log"
+    }
+  },
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "center": "minecraft:block/stripped_jungle_log",
+    "top": "minecraft:block/stripped_jungle_log_top",
+    "bottom": "minecraft:block/stripped_jungle_log_top",
+    "self": "minecraft:block/stripped_jungle_log",
+    "particle": "minecraft:block/stripped_jungle_log"
+  }
+}

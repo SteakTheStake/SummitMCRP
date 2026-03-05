@@ -1,1 +1,15 @@
-{"variants":{"":{"model":"block/cobblestone","uvlock":true}}}
+{
+  "variants": {
+    "": {
+      "model": "block/cobblestone"
+    }
+  },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "minecraft:block/cobblestone_ctm/3",
+    "empty": "minecraft:block/cobblestone_ctm/0",
+    "horizontal": "minecraft:block/cobblestone_ctm/2",
+    "vertical": "minecraft:block/cobblestone_ctm/1",
+    "particle": "minecraft:block/cobblestone"
+  }
+}

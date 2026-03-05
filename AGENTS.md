@@ -21,6 +21,8 @@ This document defines the system architecture, file structure, constraints, and 
 12. [Constraints & Common Pitfalls](#12-constraints--common-pitfalls)
 13. [Validation Checklist](#13-validation-checklist)
 14. [Respackopts — In-Game Config Menus for Your Pack](#14-respackopts--in-game-config-menus-for-your-pack)
+15. [Athena CTM — Blockstate-Based Connected Textures](#15-athena-ctm--blockstate-based-connected-textures)
+16. [Fusion CTM — Model-Loader Connected Textures](#16-fusion-ctm--model-loader-connected-textures)
 
 ---
 
@@ -33,7 +35,7 @@ This document defines the system architecture, file structure, constraints, and 
 | Fabric API | Required |
 | ETF | Entity Texture Features (latest for 1.21.1) |
 | EMF | Entity Model Features (latest for 1.21.1) |
-| Optional Companions | CIT Resewn, Continuity, Iris/Sodium |
+| Optional Companions | CIT Resewn, Continuity, Iris/Sodium, Athena, Fusion |
 
 > **Agent Rule:** Always target `1.21.1` namespace conventions. Pack format for 1.21.x is **`pack_format: 34`** in `pack.mcmeta`. Do not use OptiFine-specific paths; ETF/EMF have their own path conventions that differ in subtle ways.
 
@@ -1919,6 +1921,485 @@ ETF will still read `creeper.properties` and try to select `creeper2.png` as a v
 - The `version` field should be **13** for 1.21.1 packs. Using an old version number disables features introduced in later format versions.
 - ETF `.properties` files are not `.rpo`-filterable in the same way as textures — hiding a `.properties` file removes the ETF ruleset, falling back to no randomization. This is a valid technique for an "enable ETF randomization" toggle.
 - **Performance:** Respackopts adds roughly 6% overhead to resource reload time and 18% to initial game load time (measured on 1.20.1). Pack scanning is the most expensive phase. This is generally acceptable but worth noting for packs with hundreds of `.rpo` sidecars.
+
+---
+
+## 15. Athena CTM — Blockstate-Based Connected Textures
+
+Athena is a cross-platform baked-model loader for connected textures. All configuration lives in the **blockstate JSON** file — not in model files. It is primarily used by mods like *Chipped*.
+
+### 15.1 How Athena Works
+
+Athena extends the vanilla blockstate JSON with two additional top-level keys: `"athena:loader"` (selects the loader) and `"ctm_textures"` (maps texture slot names to resource locations). The `"variants"` block must still be present (it can be a no-op pointing to `minecraft:block/air`).
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "<loader-id>",
+  "ctm_textures": {
+    "<slot>": "<namespace:path/to/texture>",
+    ...
+  }
+}
+```
+
+### 15.2 File Location
+
+```
+assets/<namespace>/blockstates/<block_name>.json
+```
+
+Same path as vanilla blockstates. The Athena keys are simply added to the root of the existing blockstate file.
+
+### 15.3 Built-In Loaders
+
+#### `athena:ctm` — Full Cube CTM
+
+Standard connected block — all six faces connect to matching neighbors in all directions.
+
+**Texture keys:**
+
+| Key | Purpose |
+|---|---|
+| `center` | Internal corners |
+| `empty` | Fill the center of the texture |
+| `horizontal` | Horizontal edges |
+| `vertical` | Vertical edges |
+| `particle` | Particle effect; also used for external corners |
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center":     "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/3",
+    "empty":      "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/0",
+    "horizontal": "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/2",
+    "particle":   "chipped:block/amethyst_block/cut_amethyst_block_column",
+    "vertical":   "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/1"
+  }
+}
+```
+
+---
+
+#### `athena:carpet_ctm` — Carpet CTM
+
+Same as Full Cube CTM but the model suppresses CTM on the 1-pixel-thick carpet edges so they don't pick up connected textures incorrectly.
+
+**Texture keys:** Same 5 as `athena:ctm` (`center`, `empty`, `horizontal`, `vertical`, `particle`).
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:carpet_ctm",
+  "ctm_textures": {
+    "center":     "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/3",
+    "empty":      "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/0",
+    "horizontal": "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/2",
+    "particle":   "chipped:block/amethyst_block/cut_amethyst_block_column",
+    "vertical":   "chipped:block/amethyst_block/ctm/cut_amethyst_block_column_ctm/1"
+  }
+}
+```
+
+---
+
+#### `athena:pane_ctm` — Pane CTM
+
+Same as Full Cube CTM but includes special vertical culling logic for glass panes so connected faces are hidden correctly at pane junctions.
+
+**Texture keys:** Same 5 as `athena:ctm`.
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:pane_ctm",
+  "ctm_textures": {
+    "center":     "chipped:block/light_blue_stained_glass/ctm/fancy_light_blue_stained_glass_ctm/3",
+    "empty":      "chipped:block/light_blue_stained_glass/ctm/fancy_light_blue_stained_glass_ctm/0",
+    "horizontal": "chipped:block/light_blue_stained_glass/ctm/fancy_light_blue_stained_glass_ctm/2",
+    "particle":   "chipped:block/light_blue_stained_glass/fancy_light_blue_stained_glass",
+    "vertical":   "chipped:block/light_blue_stained_glass/ctm/fancy_light_blue_stained_glass_ctm/1"
+  }
+}
+```
+
+---
+
+#### `athena:giant` — Mural
+
+A texture that stretches across a grid of N × M blocks. Tile indices are **1-based**, reading left-to-right, top-to-bottom. Requires `"width"` and `"height"` integers at the root alongside `ctm_textures`.
+
+**Texture keys:** `"1"` through `"<width * height>"`, plus `"particle"`.
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:giant",
+  "width": 2,
+  "height": 2,
+  "ctm_textures": {
+    "1":        "chipped:block/amethyst_block/ctm/massive_amethyst_block_bricks/0",
+    "2":        "chipped:block/amethyst_block/ctm/massive_amethyst_block_bricks/1",
+    "3":        "chipped:block/amethyst_block/ctm/massive_amethyst_block_bricks/2",
+    "4":        "chipped:block/amethyst_block/ctm/massive_amethyst_block_bricks/3",
+    "particle": "chipped:block/amethyst_block/massive_amethyst_block_bricks"
+  }
+}
+```
+
+---
+
+#### `athena:pillar` — Pillar (any axis)
+
+A CTM loader for axis-aligned blocks (blocks with an `axis` property). Connects vertically, horizontally, or along the Z-axis depending on the block's facing.
+
+**Texture keys:**
+
+| Key | Purpose |
+|---|---|
+| `center` | Middle section of the pillar when connected on both ends |
+| `top` | Top cap when connected below but not above |
+| `bottom` | Bottom cap when connected above but not below |
+| `self` | Side texture when the pillar is a single isolated block |
+| `particle` | Particle effect; also used for pillar end faces |
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:pillar",
+  "ctm_textures": {
+    "bottom":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/3",
+    "center":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/2",
+    "particle": "chipped:block/amethyst_block/curly_amethyst_block_pillar",
+    "self":     "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/0",
+    "top":      "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/1"
+  }
+}
+```
+
+---
+
+#### `athena:limited_pillar` — Limited Pillar (vertical only)
+
+Identical to `athena:pillar` but connections are evaluated on the **Y-axis only** — the block does not connect horizontally or along the Z-axis.
+
+**Texture keys:** Same 5 as `athena:pillar`.
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:limited_pillar",
+  "ctm_textures": {
+    "bottom":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/3",
+    "center":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/2",
+    "particle": "chipped:block/amethyst_block/curly_amethyst_block_pillar",
+    "self":     "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/0",
+    "top":      "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/1"
+  }
+}
+```
+
+---
+
+#### `athena:pane_pillar` — Pane Pillar (vertical only)
+
+Identical to `athena:limited_pillar` but designed for glass pane blocks — adds the same special vertical culling as `athena:pane_ctm`.
+
+**Texture keys:** Same 5 as `athena:pillar`.
+
+```json
+{
+  "variants": { "": { "model": "minecraft:block/air" } },
+  "athena:loader": "athena:pane_pillar",
+  "ctm_textures": {
+    "bottom":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/3",
+    "center":   "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/2",
+    "particle": "chipped:block/amethyst_block/curly_amethyst_block_pillar",
+    "self":     "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/0",
+    "top":      "chipped:block/amethyst_block/ctm/curly_amethyst_block_pillar/1"
+  }
+}
+```
+
+---
+
+### 15.4 Athena Constraints
+
+- `"athena:loader"` and `"ctm_textures"` go at the **root of the blockstate file**, not inside `"variants"` entries or model files.
+- The `"variants"` block is **required** even if it only contains `"": { "model": "minecraft:block/air" }`.
+- Texture paths are standard resource locations: `<namespace>:path/to/texture` (no `.png` extension).
+- Mural tile indices are **1-based**, not 0-based.
+- For `athena:giant`, `"width"` and `"height"` are required root-level integers; the total number of `ctm_textures` entries (excluding `particle`) must equal `width × height`.
+- Athena is a **baked-model loader** — changes require a full resource pack reload (F3+T).
+- Do not mix Athena loader keys with Continuity or OptiFine CTM in the same blockstate file.
+
+---
+
+## 16. Fusion CTM — Model-Loader Connected Textures
+
+Fusion is a Fabric/Forge/NeoForge mod that provides connected textures, random textures, continuous textures, and scrolling textures. It uses a **two-part system**: a `.mcmeta` sidecar on the texture file that declares the texture type, and a model file that uses the `fusion:model` loader to process those textures.
+
+### 16.1 Pack Setup
+
+Add a `fusion` key to `pack.mcmeta` with the minimum Fusion version you are targeting:
+
+```json
+{
+  "pack": {
+    "pack_format": 34,
+    "description": "My Resource Pack"
+  },
+  "fusion": {
+    "min_version": "1.2.0"
+  }
+}
+```
+
+Check [Modrinth](https://modrinth.com/mod/fusion-connected-textures/versions) for the current version. Use only the `major.minor.patch` portion (e.g. `"1.2.0"` from `1.2.0a-fabric-mc1.21`).
+
+### 16.2 Texture Types (`.mcmeta` sidecars)
+
+Fusion texture types are declared in a `.mcmeta` file placed next to the texture PNG, using the same name as the PNG with `.mcmeta` appended. All configuration goes under the `"fusion"` key.
+
+```
+assets/<namespace>/textures/block/my_texture.png
+assets/<namespace>/textures/block/my_texture.png.mcmeta
+```
+
+```json
+{ "fusion": { "type": "<texture type>", <configuration> } }
+```
+
+> **Note:** Fusion texture types are compatible with vanilla animated texture data — you can have both `"animation"` and `"fusion"` keys in the same `.mcmeta`.
+
+---
+
+#### Type: `base`
+
+Applies base rendering properties to a vanilla-format texture. Used on its own or as the foundation for other types. Requires the `base` or `connecting` **model type**.
+
+| Property | Values | Default | Notes |
+|---|---|---|---|
+| `emissive` | `true` / `false` | `false` | Renders texture at full brightness regardless of light level |
+| `render_type` | `opaque` / `cutout` / `translucent` | `opaque` | Enables transparent textures on otherwise opaque blocks |
+| `tinting` | `biome_grass` / `biome_foliage` / `biome_water` | — | Tints the texture using the biome's color at the block position |
+
+> **Important:** `emissive` and `render_type` only take effect when the model uses the `base` model type (see §16.3).
+
+```json
+{ "fusion": { "type": "base", "emissive": true, "render_type": "cutout", "tinting": "biome_grass" } }
+```
+
+---
+
+#### Type: `connecting`
+
+Declares a connected-texture layout. The texture image must follow one of the supported tile layouts (templates available in the [Fusion Examples repository](https://github.com/SuperMartijn642/FusionExamples/tree/main/templates)). **Must be paired with the `connecting` model type.**
+
+| Layout | Description |
+|---|---|
+| `simple` | Connects to the four cardinal neighbors; ignores diagonals |
+| `full` | Connects to all eight neighbors including diagonals; maximum control |
+| `pieced` | Fewer tiles than `full` by compositing corner pieces; useful for bordered textures |
+| `compact` | Only 5 tiles: end, center, vertical section, horizontal section, cross section |
+| `horizontal` | Connects only left/right |
+| `vertical` | Connects only up/down |
+| `overlay` | Overlay compositing for block overlays |
+
+```json
+{ "fusion": { "type": "connecting", "layout": "full" } }
+```
+
+```json
+{ "fusion": { "type": "connecting", "layout": "compact" } }
+```
+
+---
+
+#### Type: `continuous`
+
+Stretches a texture across a grid of blocks. The texture image contains `rows × columns` tiles arranged in a grid. Requires the `base` or `connecting` **model type**.
+
+| Property | Default | Notes |
+|---|---|---|
+| `rows` | `1` | Number of rows in the tile grid |
+| `columns` | `1` | Number of columns in the tile grid |
+
+```json
+{ "fusion": { "type": "continuous", "rows": 2, "columns": 3 } }
+```
+
+---
+
+#### Type: `random`
+
+The texture image contains multiple tiles; one is chosen at random per block position. Requires the `base` or `connecting` **model type**.
+
+| Property | Default | Notes |
+|---|---|---|
+| `rows` | `1` | Rows in the tile grid |
+| `columns` | `1` | Columns in the tile grid |
+| `seed` | — | Optional integer. Forces two textures to use the same (or different) randomness. |
+
+```json
+{ "fusion": { "type": "random", "rows": 2, "columns": 3 } }
+```
+
+---
+
+#### Type: `scrolling`
+
+An animated texture that scrolls across the image rather than jumping between discrete frames.
+
+| Property | Default | Notes |
+|---|---|---|
+| `from` | `top_left` | Starting corner: `top_left`, `top_right`, `bottom_left`, `bottom_right` |
+| `to` | `bottom_left` | Ending corner (same options as `from`) |
+| `frame_width` | `16` | Width of one frame in pixels |
+| `frame_height` | `16` | Height of one frame in pixels |
+| `frame_time` | `10` | Ticks per frame |
+| `loop_type` | `reset` | `reset` (jump back to start) or `reverse` (ping-pong) |
+| `loop_pause` | `0` | Ticks to pause at loop boundary |
+
+```json
+{ "fusion": { "type": "scrolling", "from": "top_left", "to": "bottom_left", "frame_time": 10, "frame_width": 16, "frame_height": 16, "loop_type": "reset", "loop_pause": 0 } }
+```
+
+---
+
+### 16.3 Model Types
+
+Fusion model files use the vanilla block/item model JSON format, but must include `"loader": "fusion:model"` and a `"type"` key.
+
+```
+assets/<namespace>/models/block/<block_name>.json
+```
+
+```json
+{ "loader": "fusion:model", "type": "<model type>", <configuration> }
+```
+
+---
+
+#### Model type: `base`
+
+Vanilla model format with support for `random` and `continuous` texture types. Extends vanilla with:
+
+- **`parents`** (array) — combine quads from multiple parent models:
+  ```json
+  { "loader": "fusion:model", "type": "base", "parents": [ "block/torch", "block/glass" ] }
+  ```
+- **`light_emission`** on elements (integer 0–15) — forces an element to render at a given light level:
+  ```json
+  {
+    "loader": "fusion:model", "type": "base",
+    "textures": { "all": "block/cobblestone", "particle": "#all" },
+    "elements": [
+      {
+        "from": [0, 0, 0], "to": [16, 16, 16],
+        "light_emission": 15,
+        "faces": {
+          "up":    { "texture": "#all" }, "down":  { "texture": "#all" },
+          "north": { "texture": "#all" }, "south": { "texture": "#all" },
+          "east":  { "texture": "#all" }, "west":  { "texture": "#all" }
+        }
+      }
+    ]
+  }
+  ```
+
+---
+
+#### Model type: `connecting`
+
+Inherits everything from `base` and additionally processes `connecting` textures. Adds a `"connections"` property that defines **connection predicates** — rules for when a face should connect to a neighboring block.
+
+**Simple form** (all faces share one predicate set):
+
+```json
+{
+  "loader": "fusion:model",
+  "type": "connecting",
+  "parent": "block/cube_all",
+  "textures": { "all": "block/oak_tiles" },
+  "connections": [
+    { "type": "is_same_block" },
+    { "type": "match_block", "block": "acacia_tiles" }
+  ]
+}
+```
+
+**Per-key form** (different textures use different predicates):
+
+```json
+{
+  "loader": "fusion:model",
+  "type": "connecting",
+  "textures": { "ice": "block/ice", "dirt": "block/dirt", "particle": "#ice" },
+  "connections": {
+    "ice":  [ { "type": "match_block", "block": "ice" }, { "type": "match_block", "block": "packed_ice" } ],
+    "dirt": { "type": "is_same_block" }
+  },
+  "elements": [ ... ]
+}
+```
+
+If a texture key has no entry in `"connections"`, it falls back to the `"default"` key's predicates.
+
+---
+
+### 16.4 Connection Predicates
+
+Connection predicates are JSON objects under the `"connections"` property. They determine when a face on a given side should connect. They can be composed using `and`, `or`, and `not`.
+
+| Predicate | Description | Extra fields |
+|---|---|---|
+| `is_same_block` | Connects to blocks of the same type | — |
+| `is_same_state` | Connects to blocks of the same type **and** same block properties | — |
+| `match_block` | Connects to a specific block type | `"block"`: block id |
+| `match_state` | Connects to a specific block type with matching properties | `"block"`, `"properties"` |
+| `match_block_in_front` | Connects only if the block **in front of** the neighbor (in the connection direction) matches | `"block"` |
+| `match_state_in_front` | Same as above but also checks block properties | `"block"`, `"properties"` |
+| `is_direction` | Connects only in specific face directions | `"direction"` or `"directions"` array |
+| `is_face_visible` | Connects if the neighbor's face is visible (not occluded) | — |
+| `and` | All sub-predicates must be true | `"predicates"`: array |
+| `or` | At least one sub-predicate must be true | `"predicates"`: array |
+| `not` | Inverts a sub-predicate | `"predicate"`: single predicate |
+
+Valid `is_direction` values: `top`, `top_right`, `right`, `bottom_right`, `bottom`, `bottom_left`, `left`, `top_left`.
+
+**Examples:**
+
+```json
+{ "type": "is_same_block" }
+
+{ "type": "match_block", "block": "gravel" }
+
+{ "type": "match_state", "block": "redstone_torch", "properties": { "lit": ["false"] } }
+
+{ "type": "is_direction", "directions": ["top", "bottom"] }
+
+{ "type": "and", "predicates": [ { "type": "is_face_visible" }, { "type": "match_block", "block": "gravel" } ] }
+
+{ "type": "or", "predicates": [ { "type": "match_block", "block": "sand" }, { "type": "match_block", "block": "gravel" } ] }
+
+{ "type": "not", "predicate": { "type": "match_block", "block": "sand" } }
+```
+
+---
+
+### 16.5 Fusion Constraints
+
+- `"loader": "fusion:model"` must be present in **every** Fusion model file; without it Fusion will not process the model.
+- The `connecting` texture type **requires** the `connecting` model type. Using it with a vanilla or `base` model will not produce connected visuals.
+- The `continuous` and `random` texture types require the `base` or `connecting` model type — they will not work with plain vanilla models.
+- `emissive` and `render_type` only work when the model type is `base` (or `connecting`, which inherits `base`).
+- `render_type: cutout` — pixels are either fully opaque or fully transparent. `translucent` — pixels respect the PNG alpha channel.
+- Fusion works identically on Fabric, Forge, and NeoForge — do not specify a mod-loader suffix in `min_version`.
+- Template images for all connecting layouts are available at [SuperMartijn642/FusionExamples](https://github.com/SuperMartijn642/FusionExamples/tree/main/templates).
+- Changes to `.mcmeta` files require a resource pack reload (F3+T).
 
 ---
 
