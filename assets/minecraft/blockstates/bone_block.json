@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": {
+      "model": "block/bone_block"
+    }
+  },
+  "athena:loader": "athena:limited_pillar",
+  "ctm_textures": {
+    "center": "minecraft:block/bone_block_side",
+    "top": "minecraft:block/bone_block_top",
+    "bottom": "minecraft:block/bone_block_top",
+    "self": "minecraft:block/bone_block_side",
+    "particle": "minecraft:block/bone_block_side"
+  }
+}

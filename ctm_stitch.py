@@ -7,15 +7,156 @@ Commands:
   pack --mode dev   Same as stitch: tiles in ctm/* → stitched sheets in ctm/indev/
   pack --mode prod  Reverse: split ctm/indev/ sheets → individual tiles back into ctm/*
   export        Zip the resource pack, excluding indev/, git files, and dev-only files
+  athena        Generate Athena CTM blockstate JSON files from a manifest
+  fusion        Generate Fusion CTM .mcmeta texture sidecars and model JSON files from a manifest
 
 Usage:
   python ctm_stitch.py stitch [--ctm-dir PATH] [--out-dir PATH] [--dry-run]
   python ctm_stitch.py pack --mode dev  [--ctm-dir PATH] [--indev-dir PATH] [--dry-run]
   python ctm_stitch.py pack --mode prod [--ctm-dir PATH] [--indev-dir PATH] [--dry-run]
   python ctm_stitch.py export [--pack-dir PATH] [--output FILE] [--dry-run]
+  python ctm_stitch.py athena --manifest FILE [--pack-dir PATH] [--dry-run]
+  python ctm_stitch.py fusion --manifest FILE [--pack-dir PATH] [--dry-run]
+
+Athena manifest format (JSON):
+  A list of CTM block entries. Each entry has:
+    "block"   : vanilla block name, e.g. "stone" (used for blockstate file name)
+    "loader"  : Athena loader id, one of:
+                  "athena:ctm"            (full cube CTM)
+                  "athena:carpet_ctm"     (carpet CTM)
+                  "athena:pane_ctm"       (glass pane CTM)
+                  "athena:giant"          (mural — also requires "width" and "height")
+                  "athena:pillar"         (pillar, any axis)
+                  "athena:limited_pillar" (pillar, vertical only)
+                  "athena:pane_pillar"    (pane pillar, vertical only)
+    "ctm_textures" : object mapping slot names to resource locations
+                  CTM slots (center/empty/horizontal/vertical/particle):
+                    "center"     : used for internal corners
+                    "empty"      : used for the middle of the texture
+                    "horizontal" : used for horizontal edges
+                    "vertical"   : used for vertical edges
+                    "particle"   : particle + external corners
+                  Pillar slots (center/top/bottom/self/particle):
+                    "center"  : middle section when connected on both ends
+                    "top"     : top cap
+                    "bottom"  : bottom cap
+                    "self"    : side when isolated
+                    "particle": particle + pillar end faces
+                  Mural slots (1-based index strings + particle):
+                    "1", "2", ... "N" : tiles read left-to-right top-to-bottom
+                    "particle"        : particle texture
+    "width"   : (mural only) integer columns
+    "height"  : (mural only) integer rows
+    "variants": (optional) vanilla variants block.
+                Defaults to {"": {"model": "block/<block_name>"}} which enables three-way
+                compatibility:
+                  • Athena present   — ignores variants, renders CTM
+                  • Fusion present, no Athena — blockstate resolves to block/<block_name>,
+                    which is the fusion:model file written by the fusion command
+                  • Neither present  — vanilla fallback to the normal block model
+                Override by setting "variants" explicitly only when you need non-standard
+                model routing (e.g. a block with blockstate properties).
+
+  Example:
+    [
+      {
+        "block": "stone",
+        "loader": "athena:ctm",
+        "ctm_textures": {
+          "center":     "minecraft:block/stone_ctm/3",
+          "empty":      "minecraft:block/stone_ctm/0",
+          "horizontal": "minecraft:block/stone_ctm/2",
+          "vertical":   "minecraft:block/stone_ctm/1",
+          "particle":   "minecraft:block/stone"
+        }
+      },
+      {
+        "block": "oak_log",
+        "loader": "athena:pillar",
+        "ctm_textures": {
+          "center":   "minecraft:block/oak_log_ctm/2",
+          "top":      "minecraft:block/oak_log_ctm/1",
+          "bottom":   "minecraft:block/oak_log_ctm/3",
+          "self":     "minecraft:block/oak_log_ctm/0",
+          "particle": "minecraft:block/oak_log"
+        }
+      },
+      {
+        "block": "bricks",
+        "loader": "athena:giant",
+        "width": 2,
+        "height": 2,
+        "ctm_textures": {
+          "1":        "minecraft:block/bricks_mural/0",
+          "2":        "minecraft:block/bricks_mural/1",
+          "3":        "minecraft:block/bricks_mural/2",
+          "4":        "minecraft:block/bricks_mural/3",
+          "particle": "minecraft:block/bricks"
+        }
+      }
+    ]
+
+Fusion manifest format (JSON):
+  A list of Fusion CTM entries. Each entry has:
+    "texture"      : resource path to the texture PNG relative to assets/<namespace>/textures/
+                     e.g. "block/stone" (no .png extension)
+    "namespace"    : (optional) namespace for texture path, defaults to "minecraft"
+    "texture_type" : Fusion texture type, one of:
+                       "connecting"  — CTM; requires "layout"
+                       "base"        — base rendering properties only
+                       "continuous"  — multi-block stretch; requires "rows", "columns"
+                       "random"      — random tile selection; requires "rows", "columns"
+                       "scrolling"   — animated scroll
+    "layout"       : (connecting only) one of: simple, full, pieced, compact, horizontal, vertical, overlay
+    "rows"         : (continuous/random) integer number of tile rows in the texture image
+    "columns"      : (continuous/random) integer number of tile columns in the texture image
+    "seed"         : (random, optional) integer seed for randomness
+    "emissive"     : (base/connecting, optional) true/false
+    "render_type"  : (base/connecting, optional) "opaque" | "cutout" | "translucent"
+    "tinting"      : (base/connecting, optional) "biome_grass" | "biome_foliage" | "biome_water"
+    "scrolling"    : (scrolling only) object with keys:
+                       from, to, frame_width, frame_height, frame_time, loop_type, loop_pause
+    "model"        : (optional) if present, also generate a Fusion model JSON file:
+                       "block"     : block name for the model file path, e.g. "stone"
+                       "type"      : "base" or "connecting"
+                       "parent"    : parent model resource location, e.g. "block/cube_all"
+                       "textures"  : vanilla textures dict
+                       "connections": (connecting only) connection predicate(s) — array or object
+                       "parents"   : (base, optional) array of parent resource locations
+                       "elements"  : (optional) vanilla elements array
+
+  Example:
+    [
+      {
+        "texture": "block/stone",
+        "namespace": "minecraft",
+        "texture_type": "connecting",
+        "layout": "full",
+        "model": {
+          "block": "stone",
+          "type": "connecting",
+          "parent": "block/cube_all",
+          "textures": {"all": "minecraft:block/stone"},
+          "connections": [{"type": "is_same_block"}]
+        }
+      },
+      {
+        "texture": "block/gravel",
+        "texture_type": "random",
+        "rows": 2,
+        "columns": 2
+      },
+      {
+        "texture": "block/oak_planks",
+        "texture_type": "base",
+        "emissive": false,
+        "render_type": "opaque"
+      }
+    ]
 """
 
 import argparse
+import json
 import os
 import re
 import shutil
@@ -527,6 +668,7 @@ EXPORT_EXCLUDE_DIRS = {
 
 EXPORT_EXCLUDE_EXTENSIONS = {
     ".ps1",
+    ".pur",
     ".bat",
     ".sh",
     ".py",
@@ -630,6 +772,318 @@ def cmd_export(args):
 
 
 # ---------------------------------------------------------------------------
+# Athena command
+# ---------------------------------------------------------------------------
+
+# Required texture slots per loader type
+ATHENA_CTM_SLOTS    = {"center", "empty", "horizontal", "vertical", "particle"}
+ATHENA_PILLAR_SLOTS = {"center", "top", "bottom", "self", "particle"}
+ATHENA_MURAL_LOADER = "athena:giant"
+
+ATHENA_LOADERS = {
+    "athena:ctm",
+    "athena:carpet_ctm",
+    "athena:pane_ctm",
+    "athena:giant",
+    "athena:pillar",
+    "athena:limited_pillar",
+    "athena:pane_pillar",
+}
+
+
+def _athena_required_slots(loader: str, width: int, height: int) -> set:
+    if loader == ATHENA_MURAL_LOADER:
+        indices = {str(i) for i in range(1, width * height + 1)}
+        return indices | {"particle"}
+    if loader in ("athena:pillar", "athena:limited_pillar", "athena:pane_pillar"):
+        return ATHENA_PILLAR_SLOTS
+    return ATHENA_CTM_SLOTS
+
+
+def cmd_athena(args):
+    pack_dir = Path(args.pack_dir).resolve()
+    manifest_path = Path(args.manifest).resolve()
+
+    if not manifest_path.exists():
+        sys.exit(f"Manifest not found: {manifest_path}")
+
+    with open(manifest_path, "r", encoding="utf-8") as fh:
+        entries = json.load(fh)
+
+    if not isinstance(entries, list):
+        sys.exit("Athena manifest must be a JSON array of entry objects.")
+
+    blockstates_dir = pack_dir / "assets" / "minecraft" / "blockstates"
+
+    print(f"Pack dir   : {pack_dir}")
+    print(f"Manifest   : {manifest_path}")
+    print(f"Blockstates: {blockstates_dir}")
+    if args.dry_run:
+        print("(DRY RUN - no files will be written)\n")
+
+    total_ok = 0
+    total_skip = 0
+
+    for i, entry in enumerate(entries):
+        label = f"entry[{i}]"
+
+        block = entry.get("block", "").strip()
+        if not block:
+            print(f"[SKIP] {label} - missing 'block'")
+            total_skip += 1
+            continue
+
+        label = block
+        loader = entry.get("loader", "").strip()
+        if loader not in ATHENA_LOADERS:
+            print(f"[SKIP] {label} - unknown loader '{loader}'. Must be one of: {sorted(ATHENA_LOADERS)}")
+            total_skip += 1
+            continue
+
+        ctm_textures = entry.get("ctm_textures")
+        if not isinstance(ctm_textures, dict) or not ctm_textures:
+            print(f"[SKIP] {label} - missing or empty 'ctm_textures'")
+            total_skip += 1
+            continue
+
+        width = int(entry.get("width", 1))
+        height = int(entry.get("height", 1))
+
+        if loader == ATHENA_MURAL_LOADER and (width < 1 or height < 1):
+            print(f"[SKIP] {label} - 'width' and 'height' must be >= 1 for athena:giant")
+            total_skip += 1
+            continue
+
+        required = _athena_required_slots(loader, width, height)
+        missing_slots = required - set(ctm_textures.keys())
+        if missing_slots:
+            print(f"[SKIP] {label} - missing ctm_textures slots: {sorted(missing_slots)}")
+            total_skip += 1
+            continue
+
+        # Build blockstate JSON.
+        # Default variants points to block/<block> so that:
+        #   - Athena present   → ignores variants entirely, renders CTM
+        #   - Fusion present, no Athena → loads block/<block> which resolves to the
+        #                                  fusion:model file written by the fusion command
+        #   - Neither present  → vanilla blockstate falls back to the vanilla model
+        # Override by setting "variants" explicitly in the manifest entry.
+        variants = entry.get("variants", {"": {"model": f"block/{block}"}})
+        blockstate = {"variants": variants, "athena:loader": loader, "ctm_textures": ctm_textures}
+        if loader == ATHENA_MURAL_LOADER:
+            blockstate["width"] = width
+            blockstate["height"] = height
+
+        out_path = blockstates_dir / f"{block}.json"
+
+        if args.dry_run:
+            print(f"  [DRY-RUN] Would write {out_path.relative_to(pack_dir)}")
+            print(f"            loader={loader}  slots={sorted(ctm_textures.keys())}")
+            total_ok += 1
+            continue
+
+        blockstates_dir.mkdir(parents=True, exist_ok=True)
+        with open(out_path, "w", encoding="utf-8") as fh:
+            json.dump(blockstate, fh, indent=2)
+        print(f"  [OK] {out_path.relative_to(pack_dir)}  (loader={loader})")
+        total_ok += 1
+
+    print(f"\nDone. {total_ok} blockstate(s) written, {total_skip} skipped.")
+
+
+# ---------------------------------------------------------------------------
+# Fusion command
+# ---------------------------------------------------------------------------
+
+FUSION_TEXTURE_TYPES = {"connecting", "base", "continuous", "random", "scrolling"}
+FUSION_LAYOUTS = {"simple", "full", "pieced", "compact", "horizontal", "vertical", "overlay"}
+FUSION_RENDER_TYPES = {"opaque", "cutout", "translucent"}
+FUSION_TINTINGS = {"biome_grass", "biome_foliage", "biome_water"}
+FUSION_MODEL_TYPES = {"base", "connecting"}
+
+
+def _build_fusion_mcmeta(entry: dict) -> dict:
+    """Build the content of a .mcmeta file for a Fusion texture entry."""
+    texture_type = entry["texture_type"]
+    fusion_block: dict = {"type": texture_type}
+
+    if texture_type == "connecting":
+        layout = entry.get("layout", "full")
+        fusion_block["layout"] = layout
+
+    elif texture_type in ("continuous", "random"):
+        fusion_block["rows"] = int(entry.get("rows", 1))
+        fusion_block["columns"] = int(entry.get("columns", 1))
+        if texture_type == "random" and "seed" in entry:
+            fusion_block["seed"] = int(entry["seed"])
+
+    elif texture_type == "scrolling":
+        scroll = entry.get("scrolling", {})
+        fusion_block["from"] = scroll.get("from", "top_left")
+        fusion_block["to"] = scroll.get("to", "bottom_left")
+        fusion_block["frame_width"] = int(scroll.get("frame_width", 16))
+        fusion_block["frame_height"] = int(scroll.get("frame_height", 16))
+        fusion_block["frame_time"] = int(scroll.get("frame_time", 10))
+        fusion_block["loop_type"] = scroll.get("loop_type", "reset")
+        fusion_block["loop_pause"] = int(scroll.get("loop_pause", 0))
+
+    # Base properties (valid on all types)
+    if "emissive" in entry:
+        fusion_block["emissive"] = bool(entry["emissive"])
+    if "render_type" in entry:
+        fusion_block["render_type"] = entry["render_type"]
+    if "tinting" in entry:
+        fusion_block["tinting"] = entry["tinting"]
+
+    return {"fusion": fusion_block}
+
+
+def _build_fusion_model(model_spec: dict) -> dict:
+    """Build a Fusion model JSON dict from the 'model' sub-object in a manifest entry."""
+    model_type = model_spec.get("type", "base")
+    model: dict = {"loader": "fusion:model", "type": model_type}
+
+    if "parent" in model_spec:
+        model["parent"] = model_spec["parent"]
+
+    if "parents" in model_spec:
+        model["parents"] = model_spec["parents"]
+
+    if "textures" in model_spec:
+        model["textures"] = model_spec["textures"]
+
+    if model_type == "connecting" and "connections" in model_spec:
+        model["connections"] = model_spec["connections"]
+
+    if "elements" in model_spec:
+        model["elements"] = model_spec["elements"]
+
+    return model
+
+
+def cmd_fusion(args):
+    pack_dir = Path(args.pack_dir).resolve()
+    manifest_path = Path(args.manifest).resolve()
+
+    if not manifest_path.exists():
+        sys.exit(f"Manifest not found: {manifest_path}")
+
+    with open(manifest_path, "r", encoding="utf-8") as fh:
+        entries = json.load(fh)
+
+    if not isinstance(entries, list):
+        sys.exit("Fusion manifest must be a JSON array of entry objects.")
+
+    print(f"Pack dir : {pack_dir}")
+    print(f"Manifest : {manifest_path}")
+    if args.dry_run:
+        print("(DRY RUN - no files will be written)\n")
+
+    total_mcmeta_ok = 0
+    total_model_ok = 0
+    total_skip = 0
+
+    for i, entry in enumerate(entries):
+        label = f"entry[{i}]"
+
+        if entry.get("_skip"):
+            continue
+
+        texture_path = entry.get("texture", "").strip()
+        if not texture_path:
+            print(f"[SKIP] {label} - missing 'texture'")
+            total_skip += 1
+            continue
+
+        label = texture_path
+        texture_type = entry.get("texture_type", "").strip()
+        if texture_type not in FUSION_TEXTURE_TYPES:
+            print(f"[SKIP] {label} - unknown texture_type '{texture_type}'. Must be one of: {sorted(FUSION_TEXTURE_TYPES)}")
+            total_skip += 1
+            continue
+
+        namespace = entry.get("namespace", "minecraft").strip()
+
+        # Validate type-specific required fields
+        if texture_type == "connecting":
+            layout = entry.get("layout", "full")
+            if layout not in FUSION_LAYOUTS:
+                print(f"[SKIP] {label} - unknown layout '{layout}'. Must be one of: {sorted(FUSION_LAYOUTS)}")
+                total_skip += 1
+                continue
+
+        if texture_type in ("continuous", "random"):
+            if "rows" not in entry or "columns" not in entry:
+                print(f"[SKIP] {label} - '{texture_type}' requires 'rows' and 'columns'")
+                total_skip += 1
+                continue
+
+        if "render_type" in entry and entry["render_type"] not in FUSION_RENDER_TYPES:
+            print(f"[SKIP] {label} - unknown render_type '{entry['render_type']}'. Must be one of: {sorted(FUSION_RENDER_TYPES)}")
+            total_skip += 1
+            continue
+
+        if "tinting" in entry and entry["tinting"] not in FUSION_TINTINGS:
+            print(f"[SKIP] {label} - unknown tinting '{entry['tinting']}'. Must be one of: {sorted(FUSION_TINTINGS)}")
+            total_skip += 1
+            continue
+
+        # ---- Write .mcmeta sidecar ----
+        mcmeta_content = _build_fusion_mcmeta(entry)
+        texture_file = (
+            pack_dir / "assets" / namespace / "textures" / (texture_path + ".png")
+        )
+        mcmeta_path = texture_file.with_suffix(".png.mcmeta")
+
+        if args.dry_run:
+            print(f"  [DRY-RUN] Would write mcmeta: {mcmeta_path.relative_to(pack_dir)}")
+            print(f"            {json.dumps(mcmeta_content)}")
+        else:
+            mcmeta_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(mcmeta_path, "w", encoding="utf-8") as fh:
+                json.dump(mcmeta_content, fh, indent=2)
+            print(f"  [OK] mcmeta: {mcmeta_path.relative_to(pack_dir)}")
+        total_mcmeta_ok += 1
+
+        # ---- Write model JSON (optional) ----
+        model_spec = entry.get("model")
+        if not model_spec:
+            continue
+
+        model_block = model_spec.get("block", "").strip()
+        if not model_block:
+            print(f"  [SKIP-MODEL] {label} - 'model.block' is required when 'model' is present")
+            total_skip += 1
+            continue
+
+        model_type = model_spec.get("type", "base")
+        if model_type not in FUSION_MODEL_TYPES:
+            print(f"  [SKIP-MODEL] {label} - unknown model type '{model_type}'. Must be 'base' or 'connecting'")
+            total_skip += 1
+            continue
+
+        model_content = _build_fusion_model(model_spec)
+        model_path = (
+            pack_dir / "assets" / namespace / "models" / "block" / f"{model_block}.json"
+        )
+
+        if args.dry_run:
+            print(f"  [DRY-RUN] Would write model : {model_path.relative_to(pack_dir)}")
+            print(f"            loader=fusion:model  type={model_type}")
+        else:
+            model_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(model_path, "w", encoding="utf-8") as fh:
+                json.dump(model_content, fh, indent=2)
+            print(f"  [OK] model : {model_path.relative_to(pack_dir)}")
+        total_model_ok += 1
+
+    print(
+        f"\nDone. {total_mcmeta_ok} .mcmeta sidecar(s) written, "
+        f"{total_model_ok} model(s) written, {total_skip} skipped."
+    )
+
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
@@ -725,6 +1179,54 @@ def build_parser() -> argparse.ArgumentParser:
         help="Show what would be included/excluded without writing zip",
     )
     export_p.set_defaults(func=cmd_export)
+
+    # --- athena ---
+    athena_p = subparsers.add_parser(
+        "athena",
+        help="Generate Athena CTM blockstate JSON files from a manifest",
+    )
+    athena_p.add_argument(
+        "--manifest",
+        required=True,
+        metavar="FILE",
+        help="Path to the Athena CTM manifest JSON file",
+    )
+    athena_p.add_argument(
+        "--pack-dir",
+        default=str(default_pack),
+        metavar="PATH",
+        help=f"Resource pack root directory (default: {default_pack})",
+    )
+    athena_p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what would be written without creating files",
+    )
+    athena_p.set_defaults(func=cmd_athena)
+
+    # --- fusion ---
+    fusion_p = subparsers.add_parser(
+        "fusion",
+        help="Generate Fusion CTM .mcmeta texture sidecars and model JSON files from a manifest",
+    )
+    fusion_p.add_argument(
+        "--manifest",
+        required=True,
+        metavar="FILE",
+        help="Path to the Fusion CTM manifest JSON file",
+    )
+    fusion_p.add_argument(
+        "--pack-dir",
+        default=str(default_pack),
+        metavar="PATH",
+        help=f"Resource pack root directory (default: {default_pack})",
+    )
+    fusion_p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what would be written without creating files",
+    )
+    fusion_p.set_defaults(func=cmd_fusion)
 
     return parser
 

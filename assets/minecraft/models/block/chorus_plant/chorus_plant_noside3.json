@@ -1,20 +1,65 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
+		"1": "block/end/end_flower",
 		"particle": "block/chorus_plant",
-		"texture": "block/chorus_plant"
+		"inside": "block/chorus_plant"
 	},
 	"elements": [
 		{
 			"from": [4, 4, 3],
 			"to": [12, 12, 4],
 			"faces": {
-				"north": {"uv": [4, 4, 12, 12], "texture": "#texture"},
-				"east": {"uv": [12, 4, 13, 12], "texture": "#texture"},
-				"west": {"uv": [3, 4, 4, 12], "texture": "#texture"},
-				"up": {"uv": [4, 3, 12, 4], "texture": "#texture"},
-				"down": {"uv": [4, 12, 12, 13], "texture": "#texture"}
+				"north": {"uv": [4, 4, 12, 12], "texture": "#inside"},
+				"east": {"uv": [12, 4, 13, 12], "texture": "#inside"},
+				"west": {"uv": [3, 4, 4, 12], "texture": "#inside"},
+				"up": {"uv": [4, 3, 12, 4], "texture": "#inside"},
+				"down": {"uv": [4, 12, 12, 13], "texture": "#inside"}
+			}
+		},
+		{
+			"from": [4, 4, 4],
+			"to": [12, 12, 12],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "texture": "#inside"}
+			}
+		},
+		{
+			"from": [3, 6, 3],
+			"to": [9, 12, 3],
+			"rotation": {"x": -17.73854, "y": -11.21199, "z": 167.39591, "origin": [6, 7.5, 3]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 7.75, -2.5],
+			"to": [10, 7.75, 2.5],
+			"rotation": {"x": -29.03661, "y": 42.09207, "z": -18.27021, "origin": [8, 7.75, 2.5]},
+			"faces": {
+				"up": {"uv": [10, 2, 14, 7], "texture": "#1"},
+				"down": {"uv": [7.5, 11, 11.5, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7.75, 8.5, -1.5],
+			"to": [11.75, 8.5, 3.5],
+			"rotation": {"x": -50.96432, "y": -5.68988, "z": -20.34233, "origin": [9.75, 8.5, 3.5]},
+			"faces": {
+				"up": {"uv": [5, 6.25, 0, 10.25], "rotation": 270, "texture": "#1"},
+				"down": {"uv": [7.5, 11, 11.5, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8.3731, 11.08724, 0.625],
+			"to": [12.3731, 11.08724, 5.875],
+			"rotation": {"x": -97.40074, "y": 39.35377, "z": -102.92739, "origin": [8.375, 11, 3.25]},
+			"faces": {
+				"up": {"uv": [11.75, 15.25, 6.5, 11.25], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [12, 7.125, 16, 12.375], "texture": "#1"}
 			}
 		}
 	]

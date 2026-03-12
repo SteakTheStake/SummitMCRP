@@ -1,0 +1,26 @@
+[
+  {
+    "_comment": "Pillar CTM — bone_block side uses method=vertical in OptiFine. athena:limited_pillar connects only on the vertical axis.",
+    "block": "bone_block",
+    "loader": "athena:limited_pillar",
+    "ctm_textures": {
+      "center":   "minecraft:block/bone_block_side",
+      "top":      "minecraft:block/bone_block_top",
+      "bottom":   "minecraft:block/bone_block_top",
+      "self":     "minecraft:block/bone_block_side",
+      "particle": "minecraft:block/bone_block_side"
+    }
+  },
+  {
+    "_comment": "Pillar CTM — stripped_jungle_log side uses method=vertical in OptiFine. athena:pillar connects on all axes.",
+    "block": "stripped_jungle_log",
+    "loader": "athena:pillar",
+    "ctm_textures": {
+      "center":   "minecraft:block/stripped_jungle_log",
+      "top":      "minecraft:block/stripped_jungle_log_top",
+      "bottom":   "minecraft:block/stripped_jungle_log_top",
+      "self":     "minecraft:block/stripped_jungle_log",
+      "particle": "minecraft:block/stripped_jungle_log"
+    }
+  }
+]

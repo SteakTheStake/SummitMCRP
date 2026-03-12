@@ -1,1 +1,15 @@
-{"variants":{"":{"model":"block/stone","uvlock":true}}}
+{
+  "variants": {
+    "": {
+      "model": "block/stone"
+    }
+  },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "minecraft:block/stone_ctm/3",
+    "empty": "minecraft:block/stone_ctm/0",
+    "horizontal": "minecraft:block/stone_ctm/2",
+    "vertical": "minecraft:block/stone_ctm/1",
+    "particle": "minecraft:block/stone"
+  }
+}

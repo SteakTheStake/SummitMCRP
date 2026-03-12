@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": {
+      "model": "block/glass_pane"
+    }
+  },
+  "athena:loader": "athena:pane_ctm",
+  "ctm_textures": {
+    "center": "minecraft:block/glass_pane_ctm/3",
+    "empty": "minecraft:block/glass_pane_ctm/0",
+    "horizontal": "minecraft:block/glass_pane_ctm/2",
+    "vertical": "minecraft:block/glass_pane_ctm/1",
+    "particle": "minecraft:block/glass"
+  }
+}

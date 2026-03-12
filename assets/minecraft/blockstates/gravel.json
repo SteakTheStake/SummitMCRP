@@ -1,1 +1,15 @@
-{"variants":{"":{"model":"block/gravel"}}}
+{
+  "variants": {
+    "": {
+      "model": "block/gravel"
+    }
+  },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "minecraft:block/gravel_ctm/3",
+    "empty": "minecraft:block/gravel_ctm/0",
+    "horizontal": "minecraft:block/gravel_ctm/2",
+    "vertical": "minecraft:block/gravel_ctm/1",
+    "particle": "minecraft:block/gravel"
+  }
+}

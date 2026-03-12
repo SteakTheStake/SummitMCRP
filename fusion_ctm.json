@@ -1,0 +1,309 @@
+[
+  {
+    "_comment": "=== END DIMENSION ===",
+    "_skip": true
+  },
+  { "texture": "block/end_stone",        "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/end_stone_bricks", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/purpur_block",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/purpur_pillar",    "texture_type": "random", "rows": 2, "columns": 2 },
+
+  {
+    "_comment": "=== NETHER — blackstone ===",
+    "_skip": true
+  },
+  { "texture": "block/blackstone",          "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/blackstone_top",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/gilded_blackstone",   "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== NETHER — bone block (method=vertical → Athena handles pillar, Fusion handles random side sheet) ===",
+    "_skip": true
+  },
+  { "texture": "block/bone_block_side", "texture_type": "random", "rows": 4, "columns": 1 },
+
+  {
+    "_comment": "=== NETHER — crimson ===",
+    "_skip": true
+  },
+  { "texture": "block/crimson_nylium",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/crimson_nylium_side",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/crimson_roots",          "texture_type": "random", "rows": 1, "columns": 4 },
+  { "texture": "block/weeping_vines",          "texture_type": "random", "rows": 2, "columns": 1 },
+  { "texture": "block/weeping_vines_plant",    "texture_type": "random", "rows": 2, "columns": 1 },
+  { "texture": "block/nether_wart_block",      "texture_type": "random", "rows": 2, "columns": 2 },
+
+  {
+    "_comment": "=== NETHER — netherrack ===",
+    "_skip": true
+  },
+  { "texture": "block/netherrack", "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== NETHER — warped ===",
+    "_skip": true
+  },
+  { "texture": "block/warped_nylium",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/warped_nylium_side",     "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/warped_roots",           "texture_type": "random", "rows": 1, "columns": 4 },
+  { "texture": "block/twisting_vines",         "texture_type": "random", "rows": 2, "columns": 1 },
+  { "texture": "block/twisting_vines_plant",   "texture_type": "random", "rows": 2, "columns": 1 },
+  { "texture": "block/warped_wart_block",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/nether_sprouts",         "texture_type": "random", "rows": 1, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — dirts ===",
+    "_skip": true
+  },
+  { "texture": "block/clay",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/coarse_dirt",   "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/dirt",          "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/farmland",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/farmland_moist","texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/mud",           "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mud_bricks",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/packed_mud",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mycelium_top",  "texture_type": "random", "rows": 8, "columns": 8 },
+  { "texture": "block/podzol_top",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/podzol_side",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/rooted_dirt",   "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — fabrics / wool ===",
+    "_skip": true
+  },
+  { "texture": "block/bookshelf",         "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/black_wool",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/blue_wool",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/brown_wool",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/cyan_wool",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/gray_wool",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/green_wool",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/light_blue_wool",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/light_gray_wool",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/lime_wool",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/magenta_wool",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/orange_wool",       "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/pink_wool",         "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/purple_wool",       "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/red_wool",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/white_wool",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/yellow_wool",       "texture_type": "random", "rows": 2, "columns": 2 },
+
+  {
+    "_comment": "=== OVERWORLD — grasses ===",
+    "_skip": true
+  },
+  { "texture": "block/grass_block_top", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/dirt_path_top",   "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/glow_lichen",     "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/moss_block",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/pale_moss_block", "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/short_grass",     "texture_type": "random", "rows": 1, "columns": 4 },
+  { "texture": "block/vine",            "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — metals / ores ===",
+    "_skip": true
+  },
+  { "texture": "block/amethyst_block",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/budding_amethyst",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/copper_block",        "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/cut_copper",          "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/exposed_copper",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/exposed_cut_copper",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/oxidized_copper",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/oxidized_cut_copper", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/raw_copper_block",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/weathered_copper",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/weathered_cut_copper","texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/diamond_block",       "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — mushrooms ===",
+    "_skip": true
+  },
+  { "texture": "block/mushroom_block_inside", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/brown_mushroom_block",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mushroom_stem",         "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/red_mushroom_block",    "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — sands ===",
+    "_skip": true
+  },
+  { "texture": "block/gravel",        "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — stones ===",
+    "_skip": true
+  },
+  { "texture": "block/andesite",              "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/polished_andesite",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/deepslate",             "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/deepslate_tiles",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/diorite",               "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/polished_diorite",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/dripstone_block",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/granite",               "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/polished_granite",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/smooth_stone",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/stone",                 "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/stone_bricks",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/cracked_stone_bricks",  "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/mossy_stone_bricks",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/tuff",                  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/resin_block",           "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/resin_bricks",          "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/chiseled_resin_bricks", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/chiseled_quartz_block", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/quartz_block_side",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/quartz_bricks",         "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — terracotta ===",
+    "_skip": true
+  },
+  { "texture": "block/black_terracotta",      "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/blue_terracotta",       "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/brown_terracotta",      "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/cyan_terracotta",       "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/gray_terracotta",       "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/green_terracotta",      "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/light_blue_terracotta", "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/light_gray_terracotta", "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/lime_terracotta",       "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/magenta_terracotta",    "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/orange_terracotta",     "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/pink_terracotta",       "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/purple_terracotta",     "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/red_terracotta",        "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/terracotta",            "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/white_terracotta",      "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/yellow_terracotta",     "texture_type": "random", "rows": 3, "columns": 3 },
+
+  {
+    "_comment": "=== OVERWORLD — concrete ===",
+    "_skip": true
+  },
+  { "texture": "block/black_concrete",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/blue_concrete",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/brown_concrete",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/cyan_concrete",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/gray_concrete",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/green_concrete",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/light_blue_concrete", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/light_gray_concrete", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/lime_concrete",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/magenta_concrete",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/orange_concrete",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/pink_concrete",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/purple_concrete",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/red_concrete",        "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/white_concrete",      "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/yellow_concrete",     "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== OVERWORLD — water / ice / snow ===",
+    "_skip": true
+  },
+  { "texture": "block/ice",          "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/blue_ice",     "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/packed_ice",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/frosted_ice_0","texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/frosted_ice_1","texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/frosted_ice_2","texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/frosted_ice_3","texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/snow_block",   "texture_type": "random", "rows": 8, "columns": 8 },
+  { "texture": "block/snow",         "texture_type": "random", "rows": 8, "columns": 8 },
+  { "texture": "block/powder_snow",  "texture_type": "random", "rows": 8, "columns": 8 },
+  { "texture": "block/slime_block",  "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/sponge",       "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/wet_sponge",   "texture_type": "random", "rows": 2, "columns": 2 },
+
+  {
+    "_comment": "=== OVERWORLD — coral ===",
+    "_skip": true
+  },
+  { "texture": "block/brain_coral_block",       "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/dead_brain_coral_block",  "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/bubble_coral_block",      "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/dead_bubble_coral_block", "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/fire_coral_block",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/dead_fire_coral_block",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/horn_coral_block",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/dead_horn_coral_block",   "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/tube_coral_block",        "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/dead_tube_coral_block",   "texture_type": "random", "rows": 2, "columns": 2 },
+
+  {
+    "_comment": "=== OVERWORLD — logs (method=repeat sides) ===",
+    "_skip": true
+  },
+  { "texture": "block/acacia_log",             "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/stripped_acacia_log",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/birch_log",              "texture_type": "random", "rows": 3, "columns": 2 },
+  { "texture": "block/stripped_birch_log",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/cherry_log",             "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/stripped_cherry_log",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/dark_oak_log",           "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/stripped_dark_oak_log",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/jungle_log",             "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/stripped_jungle_log",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mangrove_log",           "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mangrove_roots_side",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/muddy_mangrove_roots_side","texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mangrove_roots_top",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/muddy_mangrove_roots_top","texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/stripped_mangrove_log",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/oak_log",                "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/stripped_oak_log",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/pale_oak_log",           "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/resin_clump",            "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/spruce_log",             "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/stripped_spruce_log",    "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "stripped_pale_oak_log uses method=vertical+horizontal in OptiFine — maps to Fusion connecting with horizontal layout",
+    "texture": "block/stripped_pale_oak_log",
+    "texture_type": "connecting",
+    "layout": "horizontal",
+    "model": {
+      "block": "stripped_pale_oak_log",
+      "type": "connecting",
+      "parent": "block/cube_column",
+      "textures": {
+        "end":  "minecraft:block/stripped_pale_oak_log_top",
+        "side": "minecraft:block/stripped_pale_oak_log"
+      },
+      "connections": [{ "type": "is_same_block" }]
+    }
+  },
+
+  {
+    "_comment": "=== OVERWORLD — planks ===",
+    "_skip": true
+  },
+  { "texture": "block/acacia_planks",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/bamboo_planks",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/bamboo_mosaic",    "texture_type": "random", "rows": 2, "columns": 2 },
+  { "texture": "block/birch_planks",     "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/cherry_planks",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/dark_oak_planks",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/jungle_planks",    "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/mangrove_planks",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/oak_planks",       "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/pale_oak_planks",  "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/spruce_planks",    "texture_type": "random", "rows": 4, "columns": 4 },
+
+  {
+    "_comment": "=== STELLARIS namespace ===",
+    "_skip": true
+  },
+  { "texture": "block/moon_cobblestone",        "namespace": "stellaris", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/moon_stone_dust",         "namespace": "stellaris", "texture_type": "random", "rows": 3, "columns": 3 },
+  { "texture": "block/moon_stone_bricks",       "namespace": "stellaris", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/cracked_moon_stone_bricks","namespace": "stellaris", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/moon_sand",               "namespace": "stellaris", "texture_type": "random", "rows": 4, "columns": 4 },
+  { "texture": "block/moon_stone",              "namespace": "stellaris", "texture_type": "random", "rows": 4, "columns": 4 }
+]

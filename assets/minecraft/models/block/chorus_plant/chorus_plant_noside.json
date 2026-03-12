@@ -1,7 +1,9 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
+		"1": "block/end/end_flower",
 		"particle": "block/chorus_plant",
 		"inside": "block/chorus_plant"
 	},
@@ -11,6 +13,24 @@
 			"to": [12, 12, 12],
 			"faces": {
 				"north": {"uv": [4, 4, 12, 12], "texture": "#inside"}
+			}
+		},
+		{
+			"from": [7.5, 6.75, -1],
+			"to": [11.5, 6.75, 4],
+			"rotation": {"x": -60, "y": 0, "z": 0, "origin": [9.5, 6.75, 4]},
+			"faces": {
+				"up": {"uv": [7.5, 16, 11.5, 11], "texture": "#1"},
+				"down": {"uv": [7.5, 11, 11.5, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8.1231, 11.08724, 1.375],
+			"to": [12.1231, 11.08724, 6.625],
+			"rotation": {"x": -90, "y": 12.5, "z": -90, "origin": [8.125, 11, 4]},
+			"faces": {
+				"up": {"uv": [12, 12.375, 16, 7.125], "texture": "#1"},
+				"down": {"uv": [12, 7.125, 16, 12.375], "texture": "#1"}
 			}
 		}
 	]
