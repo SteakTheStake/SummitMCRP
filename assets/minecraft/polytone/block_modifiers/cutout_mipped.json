@@ -13,5 +13,5 @@
       "minecraft:oak_leaves",
       "minecraft:birch_leaves"
    ],
-   "render_type": "cutout_mipped"
+   "render_type": "cutout"
 }

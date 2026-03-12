@@ -1,6 +1,10 @@
 {
-  "parent": "minecraft:block/template_chorus_flower",
-  "textures": {
-    "texture": "minecraft:block/chorus_flower"
-  }
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/template_chorus_flower",
+	"textures": {
+		"1": "block/chorus_plant",
+		"texture": "block/chorus_flower",
+		"particle": "block/chorus_plant"
+	}
 }

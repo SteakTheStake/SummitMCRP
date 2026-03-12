@@ -1,27 +1,30 @@
 # sync-to-prism.ps1
-# Watches for changes in the resource pack and syncs to PrismLauncher
+# Syncs the exported resource pack zip to PrismLauncher
 
-$source = $PSScriptRoot
-$destination = "C:\Users\gabec\AppData\Roaming\PrismLauncher\instances\1.21.11\minecraft\resourcepacks\SummitMCRP"
+$sourceZip = Join-Path $PSScriptRoot "SummitMCRP.zip"
+$destinationDir = "C:\Users\gabec\AppData\Roaming\PrismLauncher\instances\1.21.11\minecraft\resourcepacks"
 
-Write-Host "Source:      $source"
-Write-Host "Destination: $destination"
+Write-Host "Source ZIP:  $sourceZip"
+Write-Host "Destination: $destinationDir"
 Write-Host ""
 
-# Initial full sync
+# Initial sync
 Write-Host "Performing initial sync..." -ForegroundColor Cyan
-robocopy $source $destination /MIR /XD ".git" /XF "sync-to-prism.ps1" /NP /NFL /NDL
-Write-Host "Initial sync complete." -ForegroundColor Green
+if (Test-Path $sourceZip) {
+    Copy-Item $sourceZip $destinationDir -Force
+    Write-Host "Initial sync complete." -ForegroundColor Green
+} else {
+    Write-Host "Source ZIP not found: $sourceZip" -ForegroundColor Red
+}
 Write-Host ""
 Write-Host "Watching for changes... Press Ctrl+C to stop." -ForegroundColor Yellow
 Write-Host ""
 
 $watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = $source
-$watcher.IncludeSubdirectories = $true
+$watcher.Path = $PSScriptRoot
+$watcher.Filter = "SummitMCRP.zip"
 $watcher.EnableRaisingEvents = $true
 $watcher.NotifyFilter = [System.IO.NotifyFilters]::FileName -bor
-                        [System.IO.NotifyFilters]::DirectoryName -bor
                         [System.IO.NotifyFilters]::LastWrite
 
 $debounceTimer = $null
@@ -33,8 +36,6 @@ $onChange = {
 
 Register-ObjectEvent $watcher Changed -Action $onChange | Out-Null
 Register-ObjectEvent $watcher Created -Action $onChange | Out-Null
-Register-ObjectEvent $watcher Deleted -Action $onChange | Out-Null
-Register-ObjectEvent $watcher Renamed -Action $onChange | Out-Null
 
 try {
     while ($true) {
@@ -44,8 +45,12 @@ try {
             $global:pendingSync = $false
             $timestamp = Get-Date -Format "HH:mm:ss"
             Write-Host "[$timestamp] Change detected, syncing..." -ForegroundColor Cyan
-            robocopy $source $destination /MIR /XD ".git" /XF "sync-to-prism.ps1" /NP /NFL /NDL
-            Write-Host "[$timestamp] Sync complete." -ForegroundColor Green
+            if (Test-Path $sourceZip) {
+                Copy-Item $sourceZip $destinationDir -Force
+                Write-Host "[$timestamp] Sync complete." -ForegroundColor Green
+            } else {
+                Write-Host "[$timestamp] Source ZIP not found: $sourceZip" -ForegroundColor Red
+            }
         }
     }
 }

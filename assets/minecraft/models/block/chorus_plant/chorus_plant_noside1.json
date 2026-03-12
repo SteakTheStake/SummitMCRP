@@ -1,20 +1,31 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
+		"1": "block/end/end_growth",
 		"particle": "block/chorus_plant",
-		"texture": "block/chorus_plant"
+		"inside": "block/chorus_plant"
 	},
 	"elements": [
 		{
 			"from": [4, 4, 3],
 			"to": [12, 12, 4],
 			"faces": {
-				"north": {"uv": [4, 4, 12, 12], "texture": "#texture"},
-				"east": {"uv": [12, 4, 13, 12], "texture": "#texture"},
-				"west": {"uv": [3, 4, 4, 12], "texture": "#texture"},
-				"up": {"uv": [4, 3, 12, 4], "texture": "#texture"},
-				"down": {"uv": [4, 12, 12, 13], "texture": "#texture"}
+				"north": {"uv": [4, 4, 12, 12], "texture": "#inside"},
+				"east": {"uv": [12, 4, 13, 12], "texture": "#inside"},
+				"west": {"uv": [3, 4, 4, 12], "texture": "#inside"},
+				"up": {"uv": [4, 3, 12, 4], "texture": "#inside"},
+				"down": {"uv": [4, 12, 12, 13], "texture": "#inside"}
+			}
+		},
+		{
+			"from": [1, 0, 3.5],
+			"to": [15, 14, 3.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -1, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"}
 			}
 		}
 	]
