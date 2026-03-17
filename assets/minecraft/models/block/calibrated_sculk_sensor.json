@@ -4,20 +4,20 @@
 	"parent": "block/block",
 	"textures": {
 		"3": "block/amethyst_crystal",
+		"particle": "block/amethyst_crystal",
 		"side": "block/sculk-sensor-side",
 		"tendrils": "block/sculk_sensor_tendril_inactive",
-		"top": "block/sculk_shrieker_top",
-		"particle": "block/amethyst_crystal"
+		"top": "block/sculk_sensor_top"
 	},
 	"elements": [
 		{
 			"from": [0, 0, 0],
 			"to": [16, 8, 16],
 			"faces": {
-				"north": {"uv": [0, 4.75, 16, 12.75], "texture": "#side", "cullface": "north"},
-				"east": {"uv": [0, 4.75, 16, 12.75], "texture": "#side", "cullface": "east"},
-				"south": {"uv": [0, 4.75, 16, 12.75], "texture": "#side", "cullface": "south"},
-				"west": {"uv": [0, 4.75, 16, 12.75], "texture": "#side", "cullface": "west"},
+				"north": {"uv": [0, 8, 16, 16], "texture": "#side", "cullface": "north"},
+				"east": {"uv": [0, 8, 16, 16], "texture": "#side", "cullface": "east"},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#side", "cullface": "south"},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#side", "cullface": "west"},
 				"up": {"uv": [0, 0, 16, 16], "texture": "#top"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "down"}
 			}
@@ -41,9 +41,9 @@
 			}
 		},
 		{
-			"from": [-6, 2, 5.25],
-			"to": [10, 18, 5.25],
-			"rotation": {"x": -170.48683, "y": -28.32522, "z": -155.88828, "origin": [2, 10, 5.25]},
+			"from": [-6, 2, 4.75],
+			"to": [10, 18, 4.75],
+			"rotation": {"x": -170.48683, "y": -28.32522, "z": -155.88828, "origin": [2, 10, 4.75]},
 			"faces": {
 				"north": {"uv": [16, 0, 0, 16], "texture": "#tendrils"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#tendrils"}
