@@ -2,7 +2,7 @@
 # Syncs the exported resource pack zip to PrismLauncher
 
 $sourceZip = Join-Path $PSScriptRoot "SummitMCRP.zip"
-$destinationDir = "C:\Users\gabec\AppData\Roaming\PrismLauncher\instances\1.21.11\minecraft\resourcepacks"
+$destinationDir = "C:\Users\gabec\AppData\Roaming\PrismLauncher\instances\Summi-F2\minecraft\resourcepacks"
 
 Write-Host "Source ZIP:  $sourceZip"
 Write-Host "Destination: $destinationDir"

@@ -119,34 +119,51 @@
 		},
 		{
 			"part": "headwear",
-			"id": "head_part",
-			"model": "wither_skeleton_head.jpm",
-			"attach": "true"
+			"id": "headwear",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_head.jpm"
 		},
 		{
 			"part": "body",
-			"model": "wither_skeleton_body.jpm",
-			"attach": "true"
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_body.jpm"
 		},
 		{
 			"part": "left_arm",
-			"model": "wither_skeleton_left_arm.jpm",
-			"attach": "true"
+			"id": "left_arm",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_left_arm.jpm"
 		},
 		{
 			"part": "right_arm",
-			"model": "wither_skeleton_right_arm.jpm",
-			"attach": "true"
+			"id": "right_arm",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_right_arm.jpm"
 		},
 		{
 			"part": "left_leg",
-			"model": "wither_skeleton_left_leg.jpm",
-			"attach": "true"
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_left_leg.jpm"
 		},
 		{
 			"part": "right_leg",
-			"model": "wither_skeleton_right_leg.jpm",
-			"attach": "true"
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0],
+			"attach": true,
+			"model": "wither_skeleton_right_leg.jpm"
 		}
 	]
 }
