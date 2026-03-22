@@ -1,0 +1,54 @@
+{
+  "input_dir": "input",
+  "output_dir": "output",
+  "debug_dir": "debug",
+  "reference_layout": "refs/villager_desert_layout.png",
+  "model": "gpt-image-1",
+  "quality": "medium",
+  "size": "1024x1024",
+  "output_format": "png",
+  "upscale_factor": 8,
+  "preserve_alpha": true,
+  "export_debug_masks": true,
+  "base_theme": "desert villager clothing, sun-faded, practical, dusty, hand-stitched",
+  "creative_direction": "authentic desert textiles, worn hems, frayed cloth, subtle tears, leather reinforcement",
+  "global_negative_prompt": "do not alter UV placement, do not add background objects, no extra anatomy, no labels, no text, no floating scraps outside mapped islands",
+  "process_extensions": [".png"],
+  "generation_mode": "per_region",
+  "region_inpaint_padding": 24,
+  "max_file_workers": 2,
+  "max_region_workers": 4,
+  "env_file": ".env",
+  "biome_keywords": {
+    "desert": ["desert"],
+    "jungle": ["jungle"],
+    "plains": ["plains", "plain"],
+    "savanna": ["savanna"],
+    "snow": ["snow", "snowy", "tundra"],
+    "taiga": ["taiga"],
+    "swamp": ["swamp", "marsh", "bog"]
+  },
+  "regions": [
+    {"name": "head", "hex_color": "#c09e67", "material_hint": "wrapped linen cloth", "style_hint": "sun-bleached woven folds"},
+    {"name": "beanie", "hex_color": "#cf4f04", "material_hint": "dyed cloth headwear", "style_hint": "faded pigment and stitched hem"},
+    {"name": "dress_bottom", "hex_color": "#cf4f04", "material_hint": "decorative trim cloth", "style_hint": "frayed hanging trim"},
+    {"name": "feet", "hex_color": "#d8914e", "material_hint": "leather sandals or boots", "style_hint": "creased dusty leather"},
+    {"name": "legs_left", "hex_color": "#25351d", "material_hint": "light cloth trousers", "style_hint": "coarse weave and dust staining"},
+    {"name": "torso", "hex_color": "#cd9861", "material_hint": "outer tunic cloth", "style_hint": "stitched seams and worn chest panel"},
+    {"name": "legs_right", "hex_color": "#9f804b", "material_hint": "light cloth trousers", "style_hint": "coarse weave and dust staining"},
+    {"name": "undergarment", "hex_color": "#cd9861", "material_hint": "inner linen layer", "style_hint": "smoother fabric and cleaner fold lines"},
+    {"name": "dress", "hex_color": "#d8914e", "material_hint": "long outer robe cloth", "style_hint": "weathered drape with torn lower edge"},
+    {"name": "sleeves", "hex_color": "#9f804b", "material_hint": "sleeve cloth", "style_hint": "stitched cuff and subtle fraying"}
+  ],
+  "file_overrides": {
+    "desert_cleric.png": {
+      "mob_type": "desert villager cleric UV clothing texture",
+      "creative_direction": "slightly more ceremonial trim, richer dyes, but still practical and dusty"
+    },
+    "desert_farmer.png": {
+      "mob_type": "desert villager farmer UV clothing texture",
+      "creative_direction": "more practical workwear, patched cloth, stronger sun fade"
+    }
+  }
+}
+

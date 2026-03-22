@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/chicken",
+  "textures": {
+    "layer0": "eatinganimation:item/chicken_eating_0"
+  }
+}

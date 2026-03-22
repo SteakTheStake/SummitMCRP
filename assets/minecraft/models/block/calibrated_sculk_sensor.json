@@ -5,7 +5,7 @@
 	"textures": {
 		"3": "block/amethyst_crystal",
 		"particle": "block/amethyst_crystal",
-		"side": "block/sculk-sensor-side",
+		"side": "block/sculk_sensor_side",
 		"tendrils": "block/sculk_sensor_tendril_inactive",
 		"top": "block/sculk_sensor_top"
 	},

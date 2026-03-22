@@ -664,6 +664,17 @@ EXPORT_EXCLUDE_DIRS = {
     ".windsurf",
     ".vscode",
     ".idea",
+    "sync-to-prism.ps1",
+    "ctm_stitch.py",
+    "fusion_ctm.json",
+    "README.md",
+    "LICENSE",
+    "todo.txt",
+    "resize_images.py",
+    "PIN.ink",
+    "ideas.md",
+    "tools",
+    "progress.pur",
 }
 
 EXPORT_EXCLUDE_EXTENSIONS = {

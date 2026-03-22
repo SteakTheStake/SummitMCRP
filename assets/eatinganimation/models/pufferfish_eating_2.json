@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/pufferfish",
+  "textures": {
+    "layer0": "eatinganimation:item/pufferfish_eating_2"
+  }
+}
