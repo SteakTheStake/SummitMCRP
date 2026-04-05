@@ -1,0 +1,25 @@
+{
+  "kind": "block_item",
+  "target_file": "assets/minecraft/models/item/wooden_sword.json",
+  "ops": [
+    {
+      "action": "set_root",
+      "path": "parent",
+      "data": "item/handheld"
+    },
+    {
+      "action": "upsert_texture",
+      "key": "layer0",
+      "data": "item/wooden_sword"
+    },
+    {
+      "action": "set_root",
+      "path": "_todo_item_overrides",
+      "data": "Add upsert_override ops in least-specific to most-specific order."
+    }
+  ],
+  "notes": [
+    "Starter ops generated from brief.",
+    "Edit TODO markers before final apply."
+  ]
+}

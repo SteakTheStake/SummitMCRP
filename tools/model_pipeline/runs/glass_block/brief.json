@@ -1,0 +1,23 @@
+{
+  "kind": "block_item",
+  "model_type": "block",
+  "target_file": "assets/minecraft/models/block/glass.json",
+  "idea": "clean vanilla glass cube",
+  "style_profile": "default",
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "block/glass",
+    "particle": "block/glass"
+  },
+  "anti_goals": [
+    "unreadable silhouette",
+    "random texture noise",
+    "invalid geometry bounds"
+  ],
+  "constraints": {
+    "max_elements": 112,
+    "enforce_allowed_rotations": true,
+    "coord_min": 0,
+    "coord_max": 16
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "block_item",
+  "model_type": "item",
+  "target_file": "assets/minecraft/models/item/wooden_sword.json",
+  "idea": "aged sandstone crate",
+  "style_profile": "default",
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "item/wooden_sword"
+  },
+  "anti_goals": [
+    "unreadable silhouette",
+    "random texture noise",
+    "invalid geometry bounds"
+  ],
+  "constraints": {
+    "max_elements": 112,
+    "enforce_allowed_rotations": true,
+    "coord_min": 0,
+    "coord_max": 16
+  }
+}

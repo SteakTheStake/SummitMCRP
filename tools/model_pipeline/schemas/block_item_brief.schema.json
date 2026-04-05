@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Block or Item Model Brief",
+  "type": "object",
+  "required": [
+    "kind",
+    "model_type",
+    "target_file",
+    "idea",
+    "constraints"
+  ],
+  "properties": {
+    "kind": {
+      "const": "block_item"
+    },
+    "model_type": {
+      "type": "string",
+      "enum": [
+        "block",
+        "item"
+      ]
+    },
+    "target_file": {
+      "type": "string",
+      "pattern": "\\.json$"
+    },
+    "idea": {
+      "type": "string",
+      "minLength": 1
+    },
+    "style_profile": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "textures": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "anti_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": [
+        "max_elements",
+        "enforce_allowed_rotations"
+      ],
+      "properties": {
+        "max_elements": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "enforce_allowed_rotations": {
+          "type": "boolean"
+        },
+        "coord_min": {
+          "type": "number"
+        },
+        "coord_max": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

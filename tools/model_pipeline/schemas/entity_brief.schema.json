@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Model Brief",
+  "type": "object",
+  "required": [
+    "kind",
+    "target_file",
+    "idea",
+    "constraints"
+  ],
+  "properties": {
+    "kind": {
+      "const": "entity"
+    },
+    "target_file": {
+      "type": "string",
+      "pattern": "\\.jem$"
+    },
+    "idea": {
+      "type": "string",
+      "minLength": 1
+    },
+    "style_profile": {
+      "type": "string"
+    },
+    "texture": {
+      "type": "string"
+    },
+    "texture_size": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "parts_priority": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "anti_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": [
+        "keep_vanilla_pivots",
+        "forbid_duplicate_part_ids"
+      ],
+      "properties": {
+        "keep_vanilla_pivots": {
+          "type": "boolean"
+        },
+        "forbid_duplicate_part_ids": {
+          "type": "boolean"
+        },
+        "require_invert_axis_z": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

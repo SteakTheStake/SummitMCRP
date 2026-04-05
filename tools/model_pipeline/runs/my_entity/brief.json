@@ -1,0 +1,22 @@
+{
+  "kind": "entity",
+  "target_file": "assets/minecraft/optifine/cem/villager.jem",
+  "idea": "desert trader layered robe",
+  "style_profile": "default",
+  "texture": "textures/entity/villager/villager.png",
+  "texture_size": [
+    64,
+    64
+  ],
+  "parts_priority": [],
+  "anti_goals": [
+    "over-detailed noisy micro-shapes",
+    "breaking vanilla readability",
+    "duplicate or conflicting part ids"
+  ],
+  "constraints": {
+    "keep_vanilla_pivots": true,
+    "forbid_duplicate_part_ids": true,
+    "require_invert_axis_z": true
+  }
+}

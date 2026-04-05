@@ -1,0 +1,23 @@
+{
+  "kind": "entity",
+  "target_file": "assets/minecraft/optifine/cem/villager.jem",
+  "ops": [
+    {
+      "action": "set_root",
+      "path": "texture",
+      "data": "textures/entity/villager/villager.png"
+    },
+    {
+      "action": "set_root",
+      "path": "textureSize",
+      "data": [
+        64,
+        64
+      ]
+    }
+  ],
+  "notes": [
+    "This is a deterministic starter ops file.",
+    "Fill TODO geometry entries before applying to production models."
+  ]
+}

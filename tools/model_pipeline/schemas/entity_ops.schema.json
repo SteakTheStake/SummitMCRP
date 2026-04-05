@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Entity Operations",
+  "type": "object",
+  "required": [
+    "kind",
+    "target_file",
+    "ops"
+  ],
+  "properties": {
+    "kind": {
+      "const": "entity"
+    },
+    "target_file": {
+      "type": "string",
+      "pattern": "\\.jem$"
+    },
+    "ops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "set_root",
+              "upsert_model_part",
+              "remove_model_part",
+              "upsert_submodel",
+              "remove_submodel"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "parent_id": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

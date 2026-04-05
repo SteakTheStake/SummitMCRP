@@ -1,0 +1,25 @@
+{
+  "kind": "entity",
+  "path": "assets/minecraft/optifine/cem/villager.jem",
+  "scores": {
+    "style_match": 7,
+    "vanilla_readability": 8,
+    "technical_validity": 10,
+    "consistency": 8
+  },
+  "blocking_issues": [],
+  "improvements": [
+    "Run in-game EMF debug mode to verify pivots and silhouette readability."
+  ],
+  "validation": {
+    "kind": "entity",
+    "path": "assets/minecraft/optifine/cem/villager.jem",
+    "errors": [],
+    "warnings": [],
+    "stats": {
+      "root_models": 17,
+      "total_ids": 50,
+      "unique_ids": 50
+    }
+  }
+}

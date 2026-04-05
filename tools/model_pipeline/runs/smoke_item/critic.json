@@ -1,0 +1,25 @@
+{
+  "kind": "block_item",
+  "path": "assets/minecraft/models/item/wooden_sword.json",
+  "scores": {
+    "style_match": 7,
+    "vanilla_readability": 8,
+    "technical_validity": 10,
+    "consistency": 8
+  },
+  "blocking_issues": [],
+  "improvements": [
+    "Validate model lighting and readability in GUI/in-world contexts."
+  ],
+  "validation": {
+    "kind": "block_item",
+    "path": "assets/minecraft/models/item/wooden_sword.json",
+    "errors": [],
+    "warnings": [],
+    "stats": {
+      "elements": 0,
+      "textures": 1,
+      "overrides": 0
+    }
+  }
+}

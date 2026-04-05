@@ -1,0 +1,30 @@
+{
+  "kind": "block_item",
+  "target_file": "assets/minecraft/models/block/glass.json",
+  "ops": [
+    {
+      "action": "set_root",
+      "path": "parent",
+      "data": "block/cube_all"
+    },
+    {
+      "action": "upsert_texture",
+      "key": "all",
+      "data": "block/glass"
+    },
+    {
+      "action": "upsert_texture",
+      "key": "particle",
+      "data": "block/glass"
+    },
+    {
+      "action": "set_root",
+      "path": "_todo_block_elements",
+      "data": "Add upsert_element ops with valid coordinates and allowed rotations."
+    }
+  ],
+  "notes": [
+    "Starter ops generated from brief.",
+    "Edit TODO markers before final apply."
+  ]
+}

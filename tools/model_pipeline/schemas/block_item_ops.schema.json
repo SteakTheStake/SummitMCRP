@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Block or Item Operations",
+  "type": "object",
+  "required": [
+    "kind",
+    "target_file",
+    "ops"
+  ],
+  "properties": {
+    "kind": {
+      "const": "block_item"
+    },
+    "target_file": {
+      "type": "string",
+      "pattern": "\\.json$"
+    },
+    "ops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "set_root",
+              "upsert_texture",
+              "remove_texture",
+              "upsert_element",
+              "remove_element",
+              "upsert_override",
+              "remove_override"
+            ]
+          },
+          "key": {
+            "type": "string"
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "path": {
+            "type": "string"
+          },
+          "data": {
+            "type": [
+              "object",
+              "array",
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

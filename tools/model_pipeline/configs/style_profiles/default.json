@@ -1,0 +1,13 @@
+{
+  "name": "default",
+  "goals": [
+    "preserve vanilla readability",
+    "favor clean silhouettes",
+    "minimize technical risk"
+  ],
+  "anti_goals": [
+    "micro-noise geometry",
+    "pivot-breaking transforms",
+    "texture-path drift"
+  ]
+}

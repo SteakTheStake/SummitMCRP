@@ -656,57 +656,57 @@
 			"translate": [0, 0, 0]
 		},
 		{
-			"part": "nose",
-			"id": "nose",
+			"part": "nose6",
+			"id": "nose6",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "nose",
-			"id": "nose",
+			"part": "nose5",
+			"id": "nose5",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "nose",
-			"id": "nose",
+			"part": "nose4",
+			"id": "nose4",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "nose",
-			"id": "nose",
+			"part": "nose3",
+			"id": "nose3",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "body",
-			"id": "body",
+			"part": "body2",
+			"id": "body2",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "arms",
-			"id": "arms",
+			"part": "arms2",
+			"id": "arms2",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "right_leg",
-			"id": "right_leg",
+			"part": "right_leg3",
+			"id": "right_leg3",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
 		},
 		{
-			"part": "left_leg",
-			"id": "left_leg",
+			"part": "left_leg3",
+			"id": "left_leg3",
 			"invertAxis": "xy",
 			"translate": [0, 0, 0],
 			"attach": true
