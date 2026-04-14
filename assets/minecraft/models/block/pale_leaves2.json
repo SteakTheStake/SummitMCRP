@@ -2,6 +2,6 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/leaves_extra3",
 	"textures": {
-		"extra": "block/extra/pale_oak_leaves"
+		"extra": "block/pale_oak_leaves_bushy"
 	}
 }

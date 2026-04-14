@@ -1,7 +1,7 @@
 {
     "parent":"block/leaves_extra1_t",
     "textures": {
-	"all":"block/flowering_azalea_leaves",
-	"extra": "block/extra/flowering_azalea_leaves_extra"
+	"all":"block/flowering_azalea_leaves_bushy",
+	"extra": "block/flowering_azalea_leaves_bushy"
     }
 }

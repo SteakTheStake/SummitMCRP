@@ -1,7 +1,7 @@
 {
   "parent": "block/template_leaves_no_tint",
   "textures": {
-    "all": "minecraft:block/azalea_leaves",
+    "all": "minecraft:block/azalea_leaves_bushy",
     "bushy": "minecraft:block/azalea_leaves_bushy"
   }
 }

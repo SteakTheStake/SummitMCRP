@@ -675,6 +675,7 @@ EXPORT_EXCLUDE_DIRS = {
     "ideas.md",
     "tools",
     "progress.pur",
+    "tools",
 }
 
 EXPORT_EXCLUDE_EXTENSIONS = {

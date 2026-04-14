@@ -1,7 +1,7 @@
 {
     "parent":"block/leaves_extra1",
     "textures": {
-	"all":"block/mangrove_leaves",
-	"extra": "block/extra/mangrove_leaves_extra"
+	"all":"block/mangrove_leaves_bushy",
+	"extra": "block/mangrove_leaves_bushy"
     }
 }

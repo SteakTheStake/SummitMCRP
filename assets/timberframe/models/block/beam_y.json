@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"particle": "block/stripped_oak_log",
+		"all": "block/stripped_oak_log"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 18, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [4, 0, 10, 16], "texture": "#all"},
+				"east": {"uv": [10, 0, 16, 16], "texture": "#all"},
+				"south": {"uv": [8, 0, 14, 16], "texture": "#all"},
+				"west": {"uv": [0, 0, 6, 16], "texture": "#all"},
+				"up": {"uv": [5, 10, 11, 16], "texture": "#all", "cullface": "up"},
+				"down": {"uv": [5, 0, 11, 6], "texture": "#all", "cullface": "down"}
+			}
+		}
+	]
+}
