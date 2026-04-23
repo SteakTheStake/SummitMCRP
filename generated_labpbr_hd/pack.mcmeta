@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "description": "\u00a7l\u00a7n\u00a7dSUMMITMC \u00a7564x [AI LabPBR upres 256px]",
+    "pack_format": 61,
+    "supported_formats": {
+      "min_inclusive": 16,
+      "max_inclusive": 256
+    }
+  },
+  "fusion": {
+    "min_version": "1.2.0"
+  }
+}

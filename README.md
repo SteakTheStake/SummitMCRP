@@ -69,6 +69,29 @@ python ctm_stitch.py athena --manifest athena_ctm.json
 python ctm_stitch.py fusion --manifest fusion_ctm.json
 ```
 
+### AI LabPBR Upres CLI
+
+This repo also includes a LabPBR-aware texture upres tool for generating realistic 256px replacements from existing pack textures:
+
+```bash
+# Preview prompts and detected LabPBR companions without calling the API
+python labpbr_upres.py --pack-root . --output-root generated_labpbr_hd --kind block,item --limit 10 --dry-run
+
+# Generate a small batch of textures with OpenAI image edits
+python labpbr_upres.py --pack-root . --output-root generated_labpbr_hd --kind block,item --match dirt --limit 4 --api-key YOUR_OPENAI_API_KEY
+
+# Run a larger batch after reviewing the dry-run manifest
+python labpbr_upres.py --pack-root . --output-root generated_labpbr_hd --kind block,item --yes
+```
+
+What it does:
+
+- scans `assets/*/textures/**` for base textures and matching LabPBR `_n` / `_s` companions
+- builds higher-quality prompts from filename heuristics plus normal/specular channel analysis
+- uses the source texture as an image-edit reference for the albedo remake
+- upscales LabPBR companion maps deterministically so they remain valid data textures
+- writes a standalone output pack plus `labpbr_upres_manifest.json` for review
+
 ### Project Structure
 
 ```

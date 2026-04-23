@@ -1,0 +1,1293 @@
+{
+  "pack_root": "C:/devwork/automater/MAIN/SummitMC/SummitMCRP",
+  "output_root": "C:/devwork/automater/MAIN/SummitMC/SummitMCRP/generated_labpbr_hd",
+  "generated_at_utc": "2026-04-15T07:09:58.085842+00:00",
+  "settings": {
+    "dry_run": false,
+    "model": "gpt-image-1.5",
+    "api_key_provided": true,
+    "render_size": 1024,
+    "target_size": 256,
+    "include_animated": false,
+    "allow_rectangular": false,
+    "kind": [
+      "block",
+      "item"
+    ],
+    "namespace": [],
+    "match": [
+      "dirt"
+    ]
+  },
+  "tasks": [
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/coarse_dirt.png",
+        "normal": "assets/minecraft/textures/block/coarse_dirt_n.png",
+        "specular": "assets/minecraft/textures/block/coarse_dirt_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "coarse_dirt",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce one seamless square material tile with no borders, no perspective, no text, and no directional scene lighting.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #6d5745, #896c55, #514034, #5b4b3d.\nSource observations: keep contrast controlled so the texture stays usable in-game.\nLabPBR material cues to honor: moderate surface relief from the normal map; porous or chalky absorption behavior.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            106,
+            84,
+            67
+          ],
+          "dominant_colors": [
+            "#6d5745",
+            "#896c55",
+            "#514034",
+            "#5b4b3d",
+            "#654e3d"
+          ],
+          "alpha_coverage": 1.0,
+          "unique_color_count": 3278,
+          "contrast": 19.01,
+          "edge_density": 0.092
+        },
+        "normal": {
+          "relief_strength": 0.1652,
+          "ao_mean": 0.985,
+          "height_mean": 1.0,
+          "notes": [
+            "moderate surface relief from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.5809,
+          "reflectance_mean": 0.0392,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0,
+          "notes": [
+            "porous or chalky absorption behavior"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/coarse_dirt.png",
+        "normal": "assets/minecraft/textures/block/coarse_dirt_n.png",
+        "specular": "assets/minecraft/textures/block/coarse_dirt_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt.png",
+        "normal": "assets/minecraft/textures/block/dirt_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce one seamless square material tile with no borders, no perspective, no text, and no directional scene lighting.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #3b2c1f, #221a13, #4d3825, #573f28.\nSource observations: keep contrast controlled so the texture stays usable in-game.\nLabPBR material cues to honor: pronounced surface relief and edge beveling from the normal map; very rough matte roughness response; porous or chalky absorption behavior.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            66,
+            49,
+            33
+          ],
+          "dominant_colors": [
+            "#3b2c1f",
+            "#221a13",
+            "#4d3825",
+            "#573f28",
+            "#64492e"
+          ],
+          "alpha_coverage": 1.0,
+          "unique_color_count": 1753,
+          "contrast": 16.74,
+          "edge_density": 0.0204
+        },
+        "normal": {
+          "relief_strength": 0.2868,
+          "ao_mean": 0.9572,
+          "height_mean": 1.0,
+          "notes": [
+            "pronounced surface relief and edge beveling from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.0937,
+          "reflectance_mean": 0.0,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0,
+          "notes": [
+            "very rough matte roughness response",
+            "porous or chalky absorption behavior"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt.png",
+        "normal": "assets/minecraft/textures/block/dirt_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt_path.png",
+        "normal": null,
+        "specular": null
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt_path",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce a square texture on a transparent background, preserving the original silhouette, centered placement, and inventory readability.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #fefefe, #736240, #8d7952, #816a3f.\nSource observations: the source is low resolution with a limited palette and needs richer secondary detail; preserve the cutout silhouette and transparent negative space.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            229,
+            226,
+            219
+          ],
+          "dominant_colors": [
+            "#fefefe",
+            "#736240",
+            "#8d7952",
+            "#816a3f",
+            "#4b412e"
+          ],
+          "alpha_coverage": 0.1846,
+          "unique_color_count": 27,
+          "contrast": 62.69,
+          "edge_density": 0.1709
+        },
+        "normal": null,
+        "specular": null
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt_path.png",
+        "normal": null,
+        "specular": null
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt_path_extra.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_extra_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_extra_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt_path_extra",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce a square texture on a transparent background, preserving the original silhouette, centered placement, and inventory readability.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #fefefe, #928771, #746a57, #4b4334.\nSource observations: macro shapes are already strong and should remain readable; preserve the cutout silhouette and transparent negative space.\nLabPBR material cues to honor: moderate surface relief from the normal map; very rough matte roughness response; porous or chalky absorption behavior.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            229,
+            227,
+            222
+          ],
+          "dominant_colors": [
+            "#fefefe",
+            "#928771",
+            "#746a57",
+            "#4b4334",
+            "#c4b59a"
+          ],
+          "alpha_coverage": 0.2112,
+          "unique_color_count": 62,
+          "contrast": 57.97,
+          "edge_density": 0.2702
+        },
+        "normal": {
+          "relief_strength": 0.1566,
+          "ao_mean": 0.9393,
+          "height_mean": 1.0,
+          "notes": [
+            "moderate surface relief from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.0912,
+          "reflectance_mean": 0.0,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0,
+          "notes": [
+            "very rough matte roughness response",
+            "porous or chalky absorption behavior"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt_path_extra.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_extra_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_extra_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt_path_short.png",
+        "normal": null,
+        "specular": null
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt_path_short",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce a square texture on a transparent background, preserving the original silhouette, centered placement, and inventory readability.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #fefefe, #675635, #5b4b2d, #776646.\nSource observations: the source is low resolution with a limited palette and needs richer secondary detail; preserve the cutout silhouette and transparent negative space.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            248,
+            247,
+            246
+          ],
+          "dominant_colors": [
+            "#fefefe",
+            "#675635",
+            "#5b4b2d",
+            "#776646",
+            "#443923"
+          ],
+          "alpha_coverage": 0.0425,
+          "unique_color_count": 17,
+          "contrast": 35.07,
+          "edge_density": 0.0322
+        },
+        "normal": null,
+        "specular": null
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt_path_short.png",
+        "normal": null,
+        "specular": null
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt_path_side.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_side_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_side_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt_path_side",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce a square texture on a transparent background, preserving the original silhouette, centered placement, and inventory readability.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #503c28, #3d2e20, #221a13, #624b33.\nSource observations: preserve the cutout silhouette and transparent negative space.\nLabPBR material cues to honor: pronounced surface relief and edge beveling from the normal map; very rough matte roughness response; porous or chalky absorption behavior; small emissive accents that should remain visually coherent.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            82,
+            66,
+            51
+          ],
+          "dominant_colors": [
+            "#503c28",
+            "#3d2e20",
+            "#221a13",
+            "#624b33",
+            "#c0b4a0"
+          ],
+          "alpha_coverage": 0.9375,
+          "unique_color_count": 2057,
+          "contrast": 54.3,
+          "edge_density": 0.0908
+        },
+        "normal": {
+          "relief_strength": 0.2674,
+          "ao_mean": 0.9422,
+          "height_mean": 0.9375,
+          "notes": [
+            "pronounced surface relief and edge beveling from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.144,
+          "reflectance_mean": 0.0,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0625,
+          "notes": [
+            "very rough matte roughness response",
+            "porous or chalky absorption behavior",
+            "small emissive accents that should remain visually coherent"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt_path_side.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_side_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_side_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/dirt_path_top.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_top_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_top_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "dirt_path_top",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce one seamless square material tile with no borders, no perspective, no text, and no directional scene lighting.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #a68c6c, #c0a583, #867558, #725f47.\nSource observations: macro shapes are already strong and should remain readable.\nLabPBR material cues to honor: moderate surface relief from the normal map; very rough matte roughness response; porous or chalky absorption behavior.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            154,
+            131,
+            101
+          ],
+          "dominant_colors": [
+            "#a68c6c",
+            "#c0a583",
+            "#867558",
+            "#725f47",
+            "#9a7d61"
+          ],
+          "alpha_coverage": 1.0,
+          "unique_color_count": 3824,
+          "contrast": 28.23,
+          "edge_density": 0.2326
+        },
+        "normal": {
+          "relief_strength": 0.0885,
+          "ao_mean": 0.9938,
+          "height_mean": 1.0,
+          "notes": [
+            "moderate surface relief from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.0757,
+          "reflectance_mean": 0.0,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0,
+          "notes": [
+            "very rough matte roughness response",
+            "porous or chalky absorption behavior"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/dirt_path_top.png",
+        "normal": "assets/minecraft/textures/block/dirt_path_top_n.png",
+        "specular": "assets/minecraft/textures/block/dirt_path_top_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    },
+    {
+      "source": {
+        "base": "assets/minecraft/textures/block/rooted_dirt.png",
+        "normal": "assets/minecraft/textures/block/rooted_dirt_n.png",
+        "specular": "assets/minecraft/textures/block/rooted_dirt_s.png"
+      },
+      "namespace": "minecraft",
+      "kind": "block",
+      "logical_name": "rooted_dirt",
+      "prompt": "Create a realistic, production-usable Minecraft texture remake from the provided references.\nSubject: packed earth and embedded pebbles.\nMaterial intent: crumbly soil with small stones and natural brown variation.\nProduce one seamless square material tile with no borders, no perspective, no text, and no directional scene lighting.\nUse the source image as the identity and composition anchor; keep the same recognizable texture purpose.\nPreserve the palette centered around #291c14, #33241b, #3d2d23, #1b120d.\nSource observations: keep contrast controlled so the texture stays usable in-game.\nLabPBR material cues to honor: pronounced surface relief and edge beveling from the normal map; very rough matte roughness response; porous or chalky absorption behavior.\nDetail targets: compact soil clumps instead of flat brown noise; small embedded pebbles with believable occlusion; fine root fibers, damp patches, and granular breakup.\nKeep the result readable after downsampling to 256x256.\nAvoid blurry color noise, centered scene composition, text, borders, camera perspective, heavy directional lighting, or unrelated objects. Do not turn the texture into a photograph of a scene.",
+      "analysis": {
+        "base": {
+          "size": [
+            64,
+            64
+          ],
+          "mean_rgb": [
+            48,
+            35,
+            26
+          ],
+          "dominant_colors": [
+            "#291c14",
+            "#33241b",
+            "#3d2d23",
+            "#1b120d",
+            "#4c3c30"
+          ],
+          "alpha_coverage": 1.0,
+          "unique_color_count": 463,
+          "contrast": 14.08,
+          "edge_density": 0.0251
+        },
+        "normal": {
+          "relief_strength": 0.3347,
+          "ao_mean": 0.9363,
+          "height_mean": 1.0,
+          "notes": [
+            "pronounced surface relief and edge beveling from the normal map"
+          ]
+        },
+        "specular": {
+          "smoothness_mean": 0.1344,
+          "reflectance_mean": 0.0,
+          "metallic_ratio": 0.0,
+          "porous_ratio": 1.0,
+          "subsurface_ratio": 0.0,
+          "emissive_ratio": 0.0,
+          "notes": [
+            "very rough matte roughness response",
+            "porous or chalky absorption behavior"
+          ]
+        }
+      },
+      "outputs": {
+        "albedo": "assets/minecraft/textures/block/rooted_dirt.png",
+        "normal": "assets/minecraft/textures/block/rooted_dirt_n.png",
+        "specular": "assets/minecraft/textures/block/rooted_dirt_s.png"
+      },
+      "status": "failed",
+      "error": "Error code: 400 - {'error': {'message': \"Unknown parameter: 'output_format'.\", 'type': 'invalid_request_error', 'param': 'output_format', 'code': 'unknown_parameter'}}"
+    }
+  ],
+  "skipped_summary": {
+    "count": 5082,
+    "by_reason": {
+      "match-filter": 1372,
+      "kind-filter": 3710
+    }
+  },
+  "skipped_examples": [
+    {
+      "path": "assets/eatinganimation/textures/item/!base!.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/apple_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/apple_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/apple_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/baked_potato_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/baked_potato_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/baked_potato_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beef_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beef_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beef_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_soup_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_soup_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/beetroot_soup_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/bread_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/bread_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/bread_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/carrot_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/carrot_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/carrot_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/enchanted_golden_apple_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/enchanted_golden_apple_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/enchanted_golden_apple_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/golden_apple_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/golden_apple_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/golden_apple_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/baked_potato_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/baked_potato_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/baked_potato_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beef_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beef_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beef_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_soup_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_soup_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/beetroot_soup_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/bottle_without_cork.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/bread_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/bread_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/bread_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/carrot_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/carrot_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/carrot_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chicken_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chicken_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chicken_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chorus_fruit_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chorus_fruit_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/chorus_fruit_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cod_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cod_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cod_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_beef_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_beef_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_beef_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_chicken_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_chicken_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_chicken_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_cod_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_cod_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_cod_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_mutton_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_mutton_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_mutton_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_porkchop_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_porkchop_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_porkchop_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_rabbit_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_rabbit_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_rabbit_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_salmon_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_salmon_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cooked_salmon_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cookie_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cookie_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/cookie_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/dried_kelp_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/dried_kelp_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/dried_kelp_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/glow_berries_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/glow_berries_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/glow_berries_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/golden_carrot_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/golden_carrot_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/golden_carrot_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/honey_bottle_drinking_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/honey_bottle_drinking_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/honey_bottle_drinking_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/melon_slice_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/melon_slice_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/melon_slice_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/milk_bucket_drinking_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/milk_bucket_drinking_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/milk_bucket_drinking_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mushroom_stew_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mushroom_stew_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mushroom_stew_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mutton_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mutton_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/mutton_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/ominous_bottle_drinking_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/ominous_bottle_drinking_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/ominous_bottle_drinking_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/poisonous_potato_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/poisonous_potato_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/poisonous_potato_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/porkchop_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/porkchop_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/porkchop_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potato_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potato_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potato_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potion_overlay_drinking_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potion_overlay_drinking_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/potion_overlay_drinking_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pufferfish_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pufferfish_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pufferfish_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pumpkin_pie_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pumpkin_pie_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/pumpkin_pie_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_stew_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_stew_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rabbit_stew_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rotten_flesh_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rotten_flesh_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/rotten_flesh_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/salmon_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/salmon_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/salmon_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/spider_eye_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/spider_eye_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/spider_eye_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/suspicious_stew_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/suspicious_stew_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/suspicious_stew_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/sweet_berries_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/sweet_berries_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/sweet_berries_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/tropical_fish_eating_0.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/tropical_fish_eating_1.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/eatinganimation/textures/item/not-done/tropical_fish_eating_2.png",
+      "reason": "match-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_3.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_4.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_5.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_6.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_conifer_1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_conifer_2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_conifer_3.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_conifer_4.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_leaf_conifer_5.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_snow.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_snow_1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/fallingleaves/textures/particle/falling_snow_2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/0.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/3.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/4.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/5.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/6.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/7.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone/8.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone_bricks/0.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone_bricks/1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone_bricks/2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/endstone_bricks/3.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/0.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/10.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/11.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/12.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/13.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/14.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/15.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/2.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/3.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/4.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/5.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/6.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/7.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/8.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_block/9.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_pillar/0.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/end/purpur_pillar/1.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/end/endstone/endstone.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/end/endstone_bricks/end_stone.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/end/purpur_block/purpur.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/nether/blackstone/blackstone.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/nether/blackstone/gilded_blackstone/gilded_blackstone.png",
+      "reason": "kind-filter"
+    },
+    {
+      "path": "assets/minecraft/optifine/ctm/indev/nether/crimson/crimson_nylium/nylium.png",
+      "reason": "kind-filter"
+    }
+  ]
+}
