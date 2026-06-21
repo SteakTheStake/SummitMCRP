@@ -1,8 +1,0 @@
-{
-   "targets": [
-      "minecraft:dirt"
-   ],
-   "colormap": {
-      "2": "minecraft:dirt"
-   }
-}

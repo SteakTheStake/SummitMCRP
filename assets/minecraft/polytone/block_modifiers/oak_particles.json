@@ -1,9 +1,0 @@
-{
-   "targets": [
-      "minecraft:oak_leaves"
-   ],
-   "colormap": {
-      "7": "minecraft:oak"
-   },
-   "disable_particles": true
-}

@@ -1,9 +1,0 @@
-{
-   "targets": [
-      "minecraft:birch_leaves"
-   ],
-   "colormap": {
-      "7": "minecraft:birch"
-   },
-   "disable_particles": true
-}

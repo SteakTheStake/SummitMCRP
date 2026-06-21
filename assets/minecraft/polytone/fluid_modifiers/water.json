@@ -1,7 +1,0 @@
-{
-    "targets": [
-        "minecraft:water",
-        "minecraft:flowing_water"
-    ],
-    "colormap": "minecraft:water"
-}
