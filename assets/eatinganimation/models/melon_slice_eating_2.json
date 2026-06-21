@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/melon_slice",
-  "textures": {
-    "layer0": "eatinganimation:item/melon_slice_eating_2"
-  }
-}

@@ -3,3 +3,5 @@ indev
 .env
 env
 SummitMC-64x.zip
+/tools/vanilla
+*.zip

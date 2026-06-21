@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/golden_carrot",
-  "textures": {
-    "layer0": "eatinganimation:item/golden_carrot_eating_2"
-  }
-}

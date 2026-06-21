@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/cod",
-  "textures": {
-    "layer0": "eatinganimation:item/cod_eating_0"
-  }
-}

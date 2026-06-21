@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/cookie",
-  "textures": {
-    "layer0": "eatinganimation:item/cookie_eating_0"
-  }
-}

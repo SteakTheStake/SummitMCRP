@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/suspicious_stew",
-  "textures": {
-    "layer0": "eatinganimation:item/suspicious_stew_eating_0"
-  }
-}
