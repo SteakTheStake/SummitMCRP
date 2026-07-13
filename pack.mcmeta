@@ -1,1 +1,6 @@
-{"pack":{"description":"§l§n§dSUMMITMC §564x","pack_format":61,"supported_formats":{"min_inclusive":16,"max_inclusive":61}}}
+{
+  "pack": {
+    "pack_format": 61,
+    "description": "§l§n§4Prism §c64x§r §o§fMade By StakeTheSteak §d<3 (LabPBR conversion by Bonemeal)"
+  }
+}
