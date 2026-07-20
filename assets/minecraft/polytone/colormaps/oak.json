@@ -1,0 +1,6 @@
+{
+    "x_axis": "biome_id",
+    "y_axis": "0.05+(noise(POS_X/200,POS_Z/275))",
+    "biome_id_mapper": "minecraft:vanilla_biomes",
+    "biome_blend": true
+}

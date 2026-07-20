@@ -1,0 +1,63 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/dried_kelp"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:using_item",
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/dried_kelp"
+      },
+      "on_true": {
+        "type": "minecraft:range_dispatch",
+        "property": "minecraft:use_duration",
+        "remaining": true,
+        "scale": 0.1,
+        "entries": [
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "eatinganimation:dried_kelp_eating_2"
+            },
+            "threshold": 0.15
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "eatinganimation:dried_kelp_eating_1"
+            },
+            "threshold": 0.25
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "eatinganimation:dried_kelp_eating_0"
+            },
+            "threshold": 0.45
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/dried_kelp"
+            },
+            "threshold": 1.0
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "eatinganimation:dried_kelp_eating_2"
+        }
+      }
+    }
+  }
+}
