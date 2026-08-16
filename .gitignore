@@ -5,3 +5,4 @@ env
 SummitMC-64x.zip
 /tools/vanilla
 *.zip
+/tools/repeat_ctm_output
