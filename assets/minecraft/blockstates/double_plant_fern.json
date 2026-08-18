@@ -1,6 +1,0 @@
-{
-  "variants": {
-    "half=lower": { "model": "minecraft:block/double_plant_fern_bottom" },
-    "half=upper": { "model": "minecraft:block/double_plant_fern_top" }
-  }
-}
