@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """
+
+python ctm_stitch.py pack --mode prod
+
+
 ctm_stitch.py — CTM Tile Stitcher & Resource Pack Exporter
 
 Commands:

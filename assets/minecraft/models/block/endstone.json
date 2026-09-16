@@ -1,0 +1,50 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/rail_flat",
+	"textures": {
+		"1": "block/endstone_overlay1",
+		"2": "block/endstone_overlay2",
+		"3": "block/endstone_overlay3",
+		"rail": "block/endstone",
+		"particle": "block/endstone_overlay1"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#rail", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 16.25, 0],
+			"to": [16, 16.25, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16.25, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 16.5, 0],
+			"to": [16, 16.5, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16.5, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		},
+		{
+			"from": [0, 16.75, 0],
+			"to": [16, 16.75, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16.75, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

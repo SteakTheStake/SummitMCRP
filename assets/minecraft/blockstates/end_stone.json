@@ -1,5 +1,45 @@
 {
-    "variants": {
-        "normal": { "model": "end_stone" }
+  "multipart": [
+    {
+      "apply": {
+        "model": "block/end_stone"
+      }
+    },
+    {
+      "apply": [
+        {
+          "model": "block/endstone_growths_variant_01",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_02",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_03",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_04",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_05",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_06",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_07",
+          "weight": 2
+        },
+        {
+          "model": "block/endstone_growths_variant_08",
+          "weight": 2
+        }
+      ]
     }
+  ]
 }
