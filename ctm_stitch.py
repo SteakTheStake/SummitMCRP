@@ -659,7 +659,29 @@ def cmd_pack(args):
 # Export command
 # ---------------------------------------------------------------------------
 
-# Patterns to EXCLUDE from the export zip
+# Export layout:
+#
+#   assets/
+#     ...all normal Minecraft asset folders/files, preserving hierarchy...
+#   credits.txt
+#   pack.mcmeta
+#   pack.png
+#   respackopts.json5
+#   terms&conditions.txt
+#
+# Files and folders outside assets/ are not exported unless explicitly listed
+# in EXPORT_ROOT_FILES below.
+
+EXPORT_ROOT_FILES = {
+    "credits.txt",
+    "pack.mcmeta",
+    "pack.png",
+    "respackopts.json5",
+    "terms&conditions.txt",
+}
+
+# Development/tooling directories that should never make it into the pack,
+# including if one happens to exist somewhere under assets/.
 EXPORT_EXCLUDE_DIRS = {
     ".git",
     ".github",
@@ -668,20 +690,10 @@ EXPORT_EXCLUDE_DIRS = {
     ".windsurf",
     ".vscode",
     ".idea",
-    "sync-to-prism.ps1",
-    "ctm_stitch.py",
-    "fusion_ctm.json",
-    "README.md",
-    "LICENSE",
-    "todo.txt",
-    "resize_images.py",
-    "PIN.ink",
-    "ideas.md",
-    "tools",
-    "progress.pur",
     "tools",
 }
 
+# Development/archive extensions to strip from assets/.
 EXPORT_EXCLUDE_EXTENSIONS = {
     ".ps1",
     ".pur",
@@ -703,29 +715,81 @@ EXPORT_EXCLUDE_FILES = {
     ".gitmodules",
 }
 
+# Common Minecraft Java resource-pack formats. These are explicitly allowed
+# anywhere under assets/.
+EXPORT_MINECRAFT_EXTENSIONS = {
+    ".mcmeta",
+    ".json",
+    ".json5",
+    ".properties",
+    ".mcproperties",
+    ".png",
+    ".tga",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".ttf",
+    ".otf",
+    ".ogg",
+    ".wav",
+    ".jem",
+    ".jpm",
+    ".jcm",
+    ".cfg",
+    ".lang",
+    ".fsh",
+    ".vsh",
+    ".gsh",
+    ".glsl",
+    ".mcpack",
+}
+
 
 def should_exclude(rel_path: Path) -> bool:
-    """Return True if this relative path should be excluded from the export."""
-    parts_lower = [p.lower() for p in rel_path.parts]
+    """
+    Return True if this path should be excluded from the exported resource pack.
 
-    # Exclude if any path component is a banned dir
-    for part in parts_lower[:-1]:  # all but last (filename)
+    The export root is intentionally strict:
+      - assets/** is preserved recursively
+      - only explicitly approved files are allowed beside assets/
+    """
+    parts = rel_path.parts
+    parts_lower = [p.lower() for p in parts]
+
+    if not parts:
+        return True
+
+    filename_lower = rel_path.name.lower()
+
+    # Root-level files: export ONLY the approved pack files.
+    if len(parts) == 1:
+        return filename_lower not in EXPORT_ROOT_FILES
+
+    # No root-level folder other than assets/ belongs in the final pack.
+    if parts_lower[0] != "assets":
+        return True
+
+    # Inside assets/, remove known development/tooling directories.
+    for part in parts_lower[1:-1]:
         if part in EXPORT_EXCLUDE_DIRS:
             return True
-
-    filename = rel_path.name
-    filename_lower = filename.lower()
 
     if filename_lower in EXPORT_EXCLUDE_FILES:
         return True
 
+    # Explicitly preserve known Minecraft resource-pack file formats.
+    if rel_path.suffix.lower() in EXPORT_MINECRAFT_EXTENSIONS:
+        return False
+
     suffix_lower = "".join(s.lower() for s in rel_path.suffixes)
     if suffix_lower in EXPORT_EXCLUDE_EXTENSIONS:
         return True
-    # Also check single suffix
+
     if rel_path.suffix.lower() in EXPORT_EXCLUDE_EXTENSIONS:
         return True
 
+    # Preserve other non-development files inside assets/ so valid mod/resource
+    # pack formats are not accidentally stripped.
     return False
 
 
