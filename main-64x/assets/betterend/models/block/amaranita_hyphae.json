@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "betterend:block/amaranita_hyphae_top",
+    "side": "betterend:block/amaranita_hyphae_side"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "#": "minecraft:wheat",
+    "X": "enderscape:drift_jelly_bottle"
+  },
+  "pattern": [
+    "#X#"
+  ],
+  "result": {
+    "count": 4,
+    "id": "enderscapes-delight:drift_thumb_cookie"
+  }
+}

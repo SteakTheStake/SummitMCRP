@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "enderscapes-delight:block/crate_bottom",
+    "side": "enderscapes-delight:block/chorus_fruit_crate_side",
+    "top": "enderscapes-delight:block/chorus_fruit_crate_top"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "enderscape",
+  "version": "2.1.0",
+  "name": "Enderscape",
+  "description": "Total overhaul of The End with new generation, biomes, mobs, and other features.",
+  "authors": [
+    "lunarbunten",
+    "hivye",
+    "Konci",
+    "Ninni",
+    "Orcinus"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/enderscape",
+    "sources": "https://github.com/Penumbra-MC/Enderscape",
+    "issues": "https://github.com/Penumbra-MC/Enderscape/issues"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "enderscape.external_link.credits": "https://github.com/Penumbra-MC/Enderscape/wiki/credits",
+        "enderscape.external_link.discord": "https://discord.gg/bksj9aqqgb",
+        "enderscape.external_link.wiki": "https://github.com/Penumbra-MC/Enderscape/wiki"
+      }
+    }
+  },
+  "license": "MIT",
+  "icon": "assets/enderscape/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.bunten.enderscape.datagen.EnderscapeDataGen"
+    ],
+    "main": [
+      "net.bunten.enderscape.Enderscape"
+    ],
+    "client": [
+      "net.bunten.enderscape.client.EnderscapeClient"
+    ],
+    "modmenu": [
+      "net.bunten.enderscape.client.EnderscapeModMenu"
+    ]
+  },
+  "mixins": [
+    "enderscape.mixins.json",
+    {
+      "config": "enderscape.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "minecraft": "\u003e\u003d1.21.11",
+    "fabricloader": "\u003e\u003d0.18.2",
+    "fabric": "\u003e\u003d0.139.4",
+    "mixson": "\u003e\u003d1.3.1",
+    "lithostitched": "\u003e\u003d1.5.2",
+    "yet_another_config_lib_v3": "\u003e\u003d3.8.1"
+  },
+  "accessWidener": "enderscape.accesswidener",
+  "jars": [
+    {
+      "file": "META-INF/jars/mixson-fabric-f45ce6470a.jar"
+    }
+  ]
+}

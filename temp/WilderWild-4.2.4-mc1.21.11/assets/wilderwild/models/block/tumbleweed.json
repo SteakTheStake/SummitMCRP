@@ -1,0 +1,73 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"inner": "wilderwild:block/tumbleweed_inner_stage_3",
+		"texture": "wilderwild:block/tumbleweed_stage_3",
+    "particle": "#texture"
+  },
+	"elements": [
+		{
+			"from": [1.01, 0.01, 1.01],
+			"to": [14.99, 13.99, 14.99],
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+				"east": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+				"south": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+				"west": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#texture"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [15.01, 14.01, 15.01],
+			"to": [1.03, 0.03, 1.03],
+			"faces": {
+				"north": {"uv": [15, 1, 1, 15], "texture": "#texture"},
+				"east": {"uv": [15, 1, 1, 15], "texture": "#texture"},
+				"south": {"uv": [15, 1, 1, 15], "texture": "#texture"},
+				"west": {"uv": [15, 1, 1, 15], "texture": "#texture"},
+				"up": {"uv": [15, 1, 1, 15], "texture": "#texture"},
+				"down": {"uv": [15, 1, 1, 15], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [2, 1, 2],
+			"to": [14, 13, 14],
+			"faces": {
+				"north": {"uv": [2, 2, 14, 14], "texture": "#inner"},
+				"east": {"uv": [2, 2, 14, 14], "texture": "#inner"},
+				"south": {"uv": [2, 2, 14, 14], "texture": "#inner"},
+				"west": {"uv": [2, 2, 14, 14], "texture": "#inner"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#inner"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#inner"}
+			}
+		},
+		{
+			"from": [14, 13, 14],
+			"to": [2, 1, 2],
+			"faces": {
+				"north": {"uv": [14, 2, 2, 14], "texture": "#inner"},
+				"east": {"uv": [14, 2, 2, 14], "texture": "#inner"},
+				"south": {"uv": [14, 2, 2, 14], "texture": "#inner"},
+				"west": {"uv": [14, 2, 2, 14], "texture": "#inner"},
+				"up": {"uv": [14, 2, 2, 14], "texture": "#inner"},
+				"down": {"uv": [14, 2, 2, 14], "texture": "#inner"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "outer",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "inner",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [2, 3]
+		}
+	]
+}

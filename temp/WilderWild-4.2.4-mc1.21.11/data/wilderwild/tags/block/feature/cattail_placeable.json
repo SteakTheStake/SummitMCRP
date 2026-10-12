@@ -1,0 +1,13 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:dirt",
+      "required": false
+    },
+    {
+      "id": "#minecraft:sand",
+      "required": false
+    },
+    "minecraft:clay"
+  ]
+}

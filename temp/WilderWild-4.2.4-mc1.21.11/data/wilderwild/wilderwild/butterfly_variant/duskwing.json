@@ -1,0 +1,13 @@
+{
+  "asset_id": "wilderwild:entity/butterfly/butterfly_duskwing",
+  "name": "duskwing",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "#wilderwild:entity/variant/butterfly_duskwing"
+      },
+      "priority": 1
+    }
+  ]
+}

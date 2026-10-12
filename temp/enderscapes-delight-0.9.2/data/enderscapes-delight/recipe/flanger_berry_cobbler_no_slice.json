@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    "minecraft:milk_bucket",
+    "minecraft:wheat",
+    "minecraft:sugar",
+    "minecraft:bedrock"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:flanger_berry_cobbler"
+  }
+}

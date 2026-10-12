@@ -1,0 +1,36 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    [
+      "minecraft:cherry_door",
+      "minecraft:cherry_trapdoor",
+      "minecraft:cherry_sign",
+      "minecraft:cherry_hanging_sign",
+      "minecraft:cherry_fence",
+      "minecraft:cherry_fence_gate",
+      "minecraft:cherry_pressure_plate",
+      "minecraft:cherry_button",
+      "minecraft:cherry_boat",
+      "farmersdelight:cherry_cabinet"
+    ]
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "minecraft:cherry_planks"
+      }
+    }
+  ],
+  "tool": {
+    "fabric:type": "fabric:any",
+    "ingredients": [
+      {
+        "fabric:type": "farmersdelight:item_ability",
+        "action": "axe_dig"
+      },
+      "#minecraft:axes"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "asset_id": "wilderwild:entity/firefly/firefly_magenta",
+  "dye_color": "magenta",
+  "name": "magenta",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

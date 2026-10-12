@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "pool1",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "enderscapes-delight:stuffed_flanger_berry_block"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "enderscapes-delight:stuffed_flanger_berry_block",
+          "properties": {
+            "servings": "4"
+          }
+        }
+      ]
+    }
+  ]
+}

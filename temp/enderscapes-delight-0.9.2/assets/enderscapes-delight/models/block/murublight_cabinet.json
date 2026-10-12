@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "down": "enderscapes-delight:block/murublight_cabinet_top",
+    "east": "enderscapes-delight:block/murublight_cabinet_side",
+    "north": "enderscapes-delight:block/murublight_cabinet_front",
+    "south": "enderscapes-delight:block/murublight_cabinet_side",
+    "up": "enderscapes-delight:block/murublight_cabinet_top",
+    "west": "enderscapes-delight:block/murublight_cabinet_side",
+    "particle": "enderscapes-delight:block/murublight_cabinet_front"
+  }
+}

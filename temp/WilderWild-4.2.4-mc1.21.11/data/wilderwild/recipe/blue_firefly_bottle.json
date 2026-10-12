@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "firefly_bottle",
+  "ingredients": [
+    "minecraft:blue_dye",
+    {
+      "fabric:type": "fabric:components",
+      "base": "wilderwild:firefly_bottle",
+      "components": {
+        "wilderwild:firefly/color": "wilderwild:on"
+      }
+    }
+  ],
+  "result": {
+    "components": {
+      "wilderwild:firefly/color": "wilderwild:blue"
+    },
+    "count": 1,
+    "id": "wilderwild:firefly_bottle"
+  }
+}

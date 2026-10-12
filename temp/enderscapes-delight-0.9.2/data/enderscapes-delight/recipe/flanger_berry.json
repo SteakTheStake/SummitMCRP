@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "enderscapes-delight:flanger_berry_crate"
+  ],
+  "result": {
+    "count": 9,
+    "id": "enderscape:flanger_berry"
+  }
+}

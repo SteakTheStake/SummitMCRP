@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:red_sand",
+    {
+      "id": "#minecraft:terracotta",
+      "required": false
+    }
+  ]
+}

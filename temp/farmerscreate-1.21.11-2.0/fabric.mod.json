@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "farmerscreate",
+  "version": "1.21.11-2.0",
+  "name": "FarmersCreate",
+  "description": "Compat mod between Farmer's Delight cutting/cooking recipes and Create",
+  "authors": [
+    "ChefExperte"
+  ],
+  "contact": {
+    "email": "aaron+minecraft@chefexperte.de",
+    "sources": "https://github.com/ChefExperte/FarmersCreate",
+    "issues": "https://github.com/ChefExperte/FarmersCreate/issues"
+  },
+  "license": "AGPL-3.0",
+  "icon": "assets/farmerscreate/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "de.chefexperte.farmersCreate.client.FarmersCreateDataGenerator"
+    ],
+    "client": [
+      "de.chefexperte.farmersCreate.client.FarmersCreateClient"
+    ],
+    "main": [
+      "de.chefexperte.farmersCreate.FarmersCreate"
+    ]
+  },
+  "mixins": [
+    "farmers-create.mixins.json",
+    {
+      "config": "farmers-create.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.11",
+    "farmersdelight": ">=1.21.11-3.4.1",
+    "create": ">=6.0.9-3"
+  }
+}

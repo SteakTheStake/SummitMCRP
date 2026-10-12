@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "enderscape:rubble_chitin",
+    "enderscape:rubble_chitin",
+    "enderscape:shadoline_ingot",
+    "enderscape:shadoline_ingot"
+  ],
+  "result": {
+    "count": 4,
+    "id": "enderscapes-delight:dusk_rubble"
+  }
+}

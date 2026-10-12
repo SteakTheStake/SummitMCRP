@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    {
+      "id": "wilderwild:arid_savanna",
+      "required": false
+    }
+  ]
+}

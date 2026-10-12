@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "betterend:block/pallidium_tiny"
+      },
+      {
+        "model": "betterend:block/pallidium_tiny",
+        "y": 90
+      },
+      {
+        "model": "betterend:block/pallidium_tiny",
+        "y": 180
+      },
+      {
+        "model": "betterend:block/pallidium_tiny",
+        "y": 270
+      }
+    ]
+  }
+}

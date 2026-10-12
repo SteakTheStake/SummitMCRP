@@ -1,0 +1,30 @@
+{
+  "values": [
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:windswept_savanna",
+    "minecraft:jungle",
+    "minecraft:bamboo_jungle",
+    "minecraft:sparse_jungle",
+    {
+      "id": "wilderwild:parched_forest",
+      "required": false
+    },
+    {
+      "id": "wilderwild:birch_jungle",
+      "required": false
+    },
+    {
+      "id": "wilderwild:sparse_birch_jungle",
+      "required": false
+    },
+    {
+      "id": "wilderwild:warm_river",
+      "required": false
+    },
+    {
+      "id": "wilderwild:warm_beach",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "wilderwild:mesoglea_caves",
+      "required": false
+    },
+    {
+      "id": "wilderwild:magmatic_caves",
+      "required": false
+    },
+    {
+      "id": "wilderwild:frozen_caves",
+      "required": false
+    }
+  ]
+}

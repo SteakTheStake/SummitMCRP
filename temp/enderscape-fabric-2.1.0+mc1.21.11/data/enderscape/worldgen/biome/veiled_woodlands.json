@@ -1,0 +1,115 @@
+{
+  "attributes": {
+    "enderscape:visual/enderscape/fog_end_density": 0.75,
+    "enderscape:visual/enderscape/nebula_alpha": {
+      "argument": 0.75,
+      "modifier": "multiply"
+    },
+    "enderscape:visual/enderscape/nebula_color": "#969baa",
+    "enderscape:visual/enderscape/star_color": "#b493ff",
+    "minecraft:audio/ambient_sounds": {
+      "additions": {
+        "sound": "enderscape:ambient.veiled_woodlands.additions",
+        "tick_chance": 6.0E-4
+      },
+      "loop": "enderscape:ambient.veiled_woodlands.loop",
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "enderscape:ambient.veiled_woodlands.mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "sound": "enderscape:music.enderscape.biome.veiled_woodlands"
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "enderscape:void_stars"
+        },
+        "probability": 0.003
+      }
+    ],
+    "minecraft:visual/cloud_color": "#00000000",
+    "minecraft:visual/fog_color": "#101017",
+    "minecraft:visual/sky_color": "#161621",
+    "minecraft:visual/sky_light_color": "#242035",
+    "minecraft:visual/water_fog_color": "#464d59"
+  },
+  "carvers": [],
+  "downfall": 0.5,
+  "effects": {
+    "foliage_color": "#a1b298",
+    "grass_color": "#a1b298",
+    "water_color": "#96a3b1"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:end_gateway_return"
+    ],
+    [],
+    [
+      "enderscape:void_shale",
+      "enderscape:void_shale_blobs",
+      "enderscape:veradite",
+      "enderscape:mirestone_blobs",
+      "enderscape:shadoline_ore",
+      "enderscape:scattered_shadoline_ore",
+      "enderscape:nebulite_ore",
+      "enderscape:ceiling_nebulite_ore"
+    ],
+    [],
+    [],
+    [
+      "enderscape:uncommon_chorus_plants",
+      "enderscape:uncommon_chorus_sprouts",
+      "enderscape:common_dry_end_growth",
+      "enderscape:veiled_trees",
+      "enderscape:veiled_woodlands_vegetation",
+      "enderscape:wisp_flower_patches",
+      "enderscape:murublight_bracket"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "enderscape:rustle",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 6
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "enderscape:rubblemite",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 2
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

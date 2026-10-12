@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "enderscapes-delight:block/rubble_bricks_slab"
+    },
+    "type=double": {
+      "model": "enderscapes-delight:block/rubble_bricks"
+    },
+    "type=top": {
+      "model": "enderscapes-delight:block/rubble_bricks_slab_top"
+    }
+  }
+}

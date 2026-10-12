@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "enderscape:ripe_flanger_berry_block"
+  },
+  "cookingtime": 400,
+  "experience": 2.0,
+  "ingredients": [
+    "#c:crops/rice",
+    "#c:crops/onion",
+    "minecraft:brown_mushroom",
+    "minecraft:potato",
+    "enderscape:rubble_chitin",
+    "#c:foods/vegetable"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:stuffed_flanger_berry_block"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "-": "minecraft:bread",
+    "#": "enderscape:drift_jelly_bottle"
+  },
+  "pattern": [
+    "-",
+    "#",
+    "-"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:drift_jelly_sandwich"
+  }
+}

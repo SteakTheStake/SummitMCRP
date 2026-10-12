@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:squid",
+    "minecraft:glow_squid",
+    "minecraft:dolphin",
+    "minecraft:tropical_fish",
+    "minecraft:pufferfish",
+    "minecraft:axolotl",
+    "minecraft:turtle",
+    "minecraft:nautilus",
+    "minecraft:zombie_nautilus",
+    "wilderwild:jellyfish",
+    "wilderwild:tumbleweed"
+  ]
+}

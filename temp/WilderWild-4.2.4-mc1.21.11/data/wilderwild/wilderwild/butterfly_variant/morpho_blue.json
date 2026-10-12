@@ -1,0 +1,13 @@
+{
+  "asset_id": "wilderwild:entity/butterfly/butterfly_morpho_blue",
+  "name": "morpho_blue",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "#wilderwild:entity/variant/butterfly_morpho_blue"
+      },
+      "priority": 1
+    }
+  ]
+}

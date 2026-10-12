@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "enderscape:ripe_flanger_berry_block"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "enderscape:flanger_berry"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

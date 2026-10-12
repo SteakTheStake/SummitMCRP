@@ -1,0 +1,115 @@
+{
+  "attributes": {
+    "enderscape:visual/enderscape/nebula_alpha": {
+      "argument": 0.5,
+      "modifier": "multiply"
+    },
+    "enderscape:visual/enderscape/nebula_color": "#96ad9e",
+    "enderscape:visual/enderscape/star_alpha": {
+      "argument": 0.85,
+      "modifier": "multiply"
+    },
+    "enderscape:visual/enderscape/star_color": "#89ffd5",
+    "minecraft:audio/ambient_sounds": {
+      "additions": {
+        "sound": "enderscape:ambient.magnia_fields.additions",
+        "tick_chance": 0.0015
+      },
+      "loop": "enderscape:ambient.magnia_fields.loop",
+      "mood": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "enderscape:ambient.magnia_fields.mood",
+        "tick_delay": 6000
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "sound": "enderscape:music.enderscape.biome.magnia_fields"
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "enderscape:void_stars"
+        },
+        "probability": 0.003
+      }
+    ],
+    "minecraft:visual/cloud_color": "#00000000",
+    "minecraft:visual/fog_color": "#0f1010",
+    "minecraft:visual/sky_color": "#151616",
+    "minecraft:visual/sky_light_color": "#374745",
+    "minecraft:visual/water_fog_color": "#5e656e"
+  },
+  "carvers": [],
+  "downfall": 0.5,
+  "effects": {
+    "foliage_color": "#919c8c",
+    "grass_color": "#919c8c",
+    "water_color": "#89919c"
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [
+      "enderscape:magnia_arches"
+    ],
+    [
+      "minecraft:end_gateway_return",
+      "enderscape:magnia_towers",
+      "enderscape:magnia_spikes",
+      "enderscape:large_magnia_spikes"
+    ],
+    [],
+    [
+      "enderscape:void_shale",
+      "enderscape:void_shale_blobs",
+      "enderscape:veradite",
+      "enderscape:mirestone_blobs",
+      "enderscape:shadoline_ore",
+      "enderscape:scattered_shadoline_ore",
+      "enderscape:nebulite_ore",
+      "enderscape:ceiling_nebulite_ore"
+    ],
+    [],
+    [],
+    [
+      "enderscape:upward_alluring_magnia_sprouts",
+      "enderscape:downward_repulsive_magnia_sprouts",
+      "enderscape:uncommon_chorus_plants",
+      "enderscape:uncommon_chorus_sprouts",
+      "enderscape:common_dry_end_growth",
+      "enderscape:murublight_bracket"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "enderscape:rubblemite",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 2
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "diagonalwalls",
+  "version": "21.11.1",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "fuzs.diagonalwalls.fabric.client.DiagonalWallsFabricClient"
+    ],
+    "main": [
+      "fuzs.diagonalwalls.fabric.DiagonalWallsFabric"
+    ]
+  },
+  "mixins": [
+    "diagonalwalls.common.mixins.json",
+    "diagonalwalls.fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "\u003e\u003d1.21.11- \u003c1.21.12-",
+    "fabricloader": "\u003e\u003d0.18.0",
+    "diagonalblocks": "*",
+    "fabric-api": "\u003e\u003d0.140.0",
+    "forgeconfigapiport": "*",
+    "puzzleslib": "\u003e\u003d21.11.4"
+  },
+  "name": "Diagonal Walls",
+  "description": "The missing diagonal blocks are here! After all these years. Finally, you have them all.",
+  "authors": [
+    "Fuzs",
+    "XFactHD"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/diagonal-walls",
+    "sources": "https://github.com/Fuzss/diagonalwalls",
+    "issues": "https://github.com/Fuzss/diagonalwalls/issues"
+  },
+  "license": "MPL-2.0",
+  "icon": "mod_logo.png",
+  "accessWidener": "diagonalwalls.accesswidener",
+  "jars": [
+    {
+      "file": "META-INF/jars/diagonalblocks-fabric-21.11.1.jar"
+    }
+  ]
+}

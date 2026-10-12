@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": "enderscape:veiled_leaves",
+  "result": {
+    "id": "enderscapes-delight:veiled_chips"
+  }
+}

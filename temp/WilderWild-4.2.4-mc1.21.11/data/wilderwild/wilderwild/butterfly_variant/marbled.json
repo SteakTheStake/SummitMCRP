@@ -1,0 +1,13 @@
+{
+  "asset_id": "wilderwild:entity/butterfly/butterfly_marbled",
+  "name": "marbled",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "#wilderwild:entity/variant/butterfly_marbled"
+      },
+      "priority": 1
+    }
+  ]
+}

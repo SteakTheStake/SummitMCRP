@@ -2,3 +2,6 @@ sculk teeth
 sculk tenticle
 Kelp
 Oak wood
+fern model
+leaves item model
+dirt / grass side

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+	"textures": {
+		"cross": "wilderwild:block/tumbleweed_stage_0"
+	}
+}

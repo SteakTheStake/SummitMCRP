@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "key": {
+    "#": "enderscape:shadoline_ingot",
+    "X": "minecraft:chorus_fruit"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:shadolined_chorus_fruit"
+  }
+}

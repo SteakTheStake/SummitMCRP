@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "betterend:block/budding_smaragdant_crystal_top",
+    "side": "betterend:block/budding_smaragdant_crystal_side"
+  }
+}

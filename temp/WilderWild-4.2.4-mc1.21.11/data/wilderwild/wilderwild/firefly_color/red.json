@@ -1,0 +1,10 @@
+{
+  "asset_id": "wilderwild:entity/firefly/firefly_red",
+  "dye_color": "red",
+  "name": "red",
+  "spawn_conditions": [
+    {
+      "priority": 0
+    }
+  ]
+}

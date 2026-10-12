@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_drifter_tentacles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscapes-delight:drifter_tentacles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscapes-delight:drifter_kebab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_drifter_tentacles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscapes-delight:drifter_kebab"
+    ]
+  }
+}

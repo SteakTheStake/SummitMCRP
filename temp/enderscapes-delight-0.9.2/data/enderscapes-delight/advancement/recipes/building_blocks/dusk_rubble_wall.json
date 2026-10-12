@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dusk_rubble": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscapes-delight:dusk_rubble"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscapes-delight:dusk_rubble_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dusk_rubble"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscapes-delight:dusk_rubble_wall"
+    ]
+  }
+}

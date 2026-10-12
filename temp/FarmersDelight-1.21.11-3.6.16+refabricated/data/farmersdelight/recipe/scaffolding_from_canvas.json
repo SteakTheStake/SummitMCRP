@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "farmersdelight:canvas",
+    "b": "minecraft:bamboo"
+  },
+  "pattern": [
+    "b#b",
+    "b b",
+    "b b"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:scaffolding"
+  }
+}

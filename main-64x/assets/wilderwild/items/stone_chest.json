@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "wilderwild:item/stone_chest",
+    "model": {
+      "type": "wilderwild:stone_chest",
+      "texture": "wilderwild:stone"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "wilderwild:block/template_plankton",
+  "textures": {
+    "texture": "wilderwild:block/plankton_glowing"
+  }
+}

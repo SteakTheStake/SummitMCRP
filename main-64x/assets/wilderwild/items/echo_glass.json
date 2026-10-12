@@ -1,0 +1,34 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "block_state_property": "damage",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "wilderwild:item/echo_glass_1"
+        },
+        "when": "1"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "wilderwild:item/echo_glass_2"
+        },
+        "when": "2"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "wilderwild:item/echo_glass_3"
+        },
+        "when": "3"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "wilderwild:item/echo_glass"
+    },
+    "property": "minecraft:block_state"
+  }
+}

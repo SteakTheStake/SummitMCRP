@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "enderscapes-delight:block/rubble_chitin_block",
+    "side": "enderscapes-delight:block/rubble_chitin_block",
+    "top": "enderscapes-delight:block/rubble_chitin_block"
+  }
+}

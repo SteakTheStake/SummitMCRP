@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    "#c:crops/cabbage",
+    {
+      "fabric:type": "fabric:any",
+      "ingredients": [
+        "#c:foods/raw_meat",
+        "#c:foods/safe_raw_fish",
+        "#c:foods/vegetable",
+        "#c:mushrooms"
+      ]
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:cabbage_rolls"
+  }
+}

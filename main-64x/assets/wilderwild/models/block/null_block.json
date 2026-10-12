@@ -1,0 +1,21 @@
+{
+  "textures": {
+    "texture": "wilderwild:block/null_block",
+    "texture_alt": "wilderwild:block/null_block_alt",
+    "particle": "#texture"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "east": {"uv": [0, 0, 16, 16], "texture": "#texture_alt"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#texture_alt"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#texture_alt"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#texture_alt"}
+      }
+    }
+  ]
+}

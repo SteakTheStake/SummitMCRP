@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    "enderscape:drift_jelly_bottle",
+    "enderscape:flanger_berry"
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:glazed_flanger_berry"
+  }
+}

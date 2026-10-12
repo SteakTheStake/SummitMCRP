@@ -1,0 +1,12 @@
+{
+    "minVersion": "0.8",
+    "compatibilityLevel": "JAVA_21",
+    "required": true,
+    "package": "fuzs.diagonalwalls.mixin",
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}

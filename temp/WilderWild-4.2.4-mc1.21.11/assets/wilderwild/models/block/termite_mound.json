@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "wilderwild:block/termite_mound_top",
+    "side": "wilderwild:block/termite_mound",
+    "top": "wilderwild:block/termite_mound_top",
+    "particle": "#side"
+  }
+}

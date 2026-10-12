@@ -1,0 +1,53 @@
+{
+  "minVersion": "0.8",
+  "required": true,
+  "package": "vectorwing.farmersdelight.common.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CampfireBaleMixin",
+    "CuttingBoardDispenserMixin",
+    "KeepRichSoilUntrampledMixin",
+    "NourishmentAlwaysEatMixin",
+    "PlacePumpkinPieMixin",
+    "RopeFenceConnectionMixin",
+    "VillagersTargetRichSoilMixin",
+    "datafix.ItemStackComponentizationFixMixin",
+    "datafix.V1460Mixin",
+    "datafix.V3818_3Mixin",
+    "refabricated.CactusBlockMixin",
+    "refabricated.CropBlockMixin",
+    "refabricated.FenceGateBlockMixin",
+    "refabricated.FoodDataAccessor",
+    "refabricated.GameRulesTypeAccessor",
+    "refabricated.GhostSlotsInvoker",
+    "refabricated.GuiGraphicsAccessor",
+    "refabricated.ItemStackMixin",
+    "refabricated.LevelMixin",
+    "refabricated.LivingEntityMixin",
+    "refabricated.MinecraftServerMixin",
+    "refabricated.MushroomBlockMixin",
+    "refabricated.PlayerMixin",
+    "refabricated.RecipeBookSettingsMixin",
+    "refabricated.RecipeBookSettingsTypeSettingsInvoker",
+    "refabricated.RecipeBookTypeMixin",
+    "refabricated.RecipeManagerMixin",
+    "refabricated.ReloadableServerRegistriesMixin",
+    "refabricated.ServerRecipeBookMixin",
+    "refabricated.StemBlockMixin",
+    "refabricated.TagLoaderMixin",
+    "refabricated.VegetationBlockMixin"
+  ],
+  "client": [
+    "CanvasSignEditScreenMixin",
+    "HideBlockBreakProgressMixin",
+    "refabricated.AbstractRecipeBookScreenAccessor",
+    "refabricated.GuiMixin",
+    "refabricated.HumanoidMobRendererMixin",
+    "refabricated.HumanoidModelMixin",
+    "refabricated.HumanoidRenderStateMixin",
+    "refabricated.SearchRecipeBookCategoryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flanger_berry_cobbler_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscapes-delight:flanger_berry_cobbler_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enderscapes-delight:flanger_berry_cobbler"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flanger_berry_cobbler_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enderscapes-delight:flanger_berry_cobbler"
+    ]
+  }
+}

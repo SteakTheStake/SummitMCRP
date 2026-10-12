@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "betterend:block/pallidium_heavy"
+      },
+      {
+        "model": "betterend:block/pallidium_heavy",
+        "y": 90
+      },
+      {
+        "model": "betterend:block/pallidium_heavy",
+        "y": 180
+      },
+      {
+        "model": "betterend:block/pallidium_heavy",
+        "y": 270
+      }
+    ]
+  }
+}

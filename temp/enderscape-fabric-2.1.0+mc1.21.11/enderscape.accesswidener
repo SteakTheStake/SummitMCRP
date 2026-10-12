@@ -1,0 +1,15 @@
+accessWidener	v1	intermediary
+accessible	class	net/minecraft/class_1890$class_1891
+accessible	class	net/minecraft/class_8967$class_8969
+accessible	class	net/minecraft/class_2766$class_7994
+accessible	class	net/minecraft/class_6686$class_6692
+accessible	field	net/minecraft/class_1661	field_7547	Lnet/minecraft/class_2371;
+accessible	field	net/minecraft/class_8966	field_47371	Ljava/util/Set;
+accessible	field	net/minecraft/class_9203	field_48883	Lcom/mojang/serialization/Codec;
+accessible	field	net/minecraft/class_6686$class_6694	field_35609	I
+accessible	field	net/minecraft/class_6686$class_6694	field_35610	I
+accessible	method	net/minecraft/class_1890	method_60139	(Lnet/minecraft/class_1799;Lnet/minecraft/class_1304;Lnet/minecraft/class_1309;Lnet/minecraft/class_1890$class_9702;)V
+accessible	method	net/minecraft/class_1890	method_8220	(Lnet/minecraft/class_1799;Lnet/minecraft/class_1890$class_1891;)V
+accessible	method	net/minecraft/class_8966$class_11350	comp_4235	()Ljava/util/Set;
+accessible	method	net/minecraft/class_9205	method_56797	()Ljava/util/Set;
+extendable	class	net/minecraft/class_6686$class_6694

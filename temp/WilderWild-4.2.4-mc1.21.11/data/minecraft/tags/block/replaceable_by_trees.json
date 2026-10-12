@@ -1,0 +1,26 @@
+{
+  "values": [
+    "wilderwild:mycelium_growth",
+    "wilderwild:datura",
+    "wilderwild:cattail",
+    "wilderwild:milkweed",
+    "wilderwild:shrub",
+    "wilderwild:pollen",
+    "wilderwild:barnacles",
+    "wilderwild:phlox",
+    "wilderwild:lantanas",
+    "wilderwild:clovers",
+    "wilderwild:frozen_short_grass",
+    "wilderwild:frozen_tall_grass",
+    "wilderwild:frozen_fern",
+    "wilderwild:frozen_large_fern",
+    "wilderwild:frozen_bush",
+    "wilderwild:sea_anemone",
+    "wilderwild:sea_whip",
+    "wilderwild:tube_worms",
+    {
+      "id": "#wilderwild:leaf_litters",
+      "required": false
+    }
+  ]
+}

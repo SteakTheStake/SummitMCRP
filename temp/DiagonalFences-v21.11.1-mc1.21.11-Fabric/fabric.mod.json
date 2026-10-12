@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "diagonalfences",
+  "version": "21.11.1",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "fuzs.diagonalfences.fabric.client.DiagonalFencesFabricClient"
+    ],
+    "main": [
+      "fuzs.diagonalfences.fabric.DiagonalFencesFabric"
+    ]
+  },
+  "mixins": [
+    "diagonalfences.common.mixins.json",
+    "diagonalfences.fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "\u003e\u003d1.21.11- \u003c1.21.12-",
+    "fabricloader": "\u003e\u003d0.18.0",
+    "diagonalblocks": "*",
+    "fabric-api": "\u003e\u003d0.140.0",
+    "forgeconfigapiport": "*",
+    "puzzleslib": "\u003e\u003d21.11.4"
+  },
+  "name": "Diagonal Fences",
+  "description": "Fences connecting diagonally? Wait. That\u0027s illegal.",
+  "authors": [
+    "Fuzs",
+    "XFactHD"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/diagonal-fences",
+    "sources": "https://github.com/Fuzss/diagonalfences",
+    "issues": "https://github.com/Fuzss/diagonalfences/issues"
+  },
+  "license": "MPL-2.0",
+  "icon": "mod_logo.png",
+  "accessWidener": "diagonalfences.accesswidener",
+  "jars": [
+    {
+      "file": "META-INF/jars/diagonalblocks-fabric-21.11.1.jar"
+    }
+  ]
+}

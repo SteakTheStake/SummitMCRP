@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "betterend:block/smaragdant_crystal_slab"
+    },
+    "type=double": {
+      "model": "betterend:block/smaragdant_crystal"
+    },
+    "type=top": {
+      "model": "betterend:block/smaragdant_crystal_slab_top"
+    }
+  }
+}

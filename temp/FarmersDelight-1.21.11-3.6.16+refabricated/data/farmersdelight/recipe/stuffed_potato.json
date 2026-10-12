@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:baked_potato",
+    "#c:foods/cooked_beef",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:stuffed_potato"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "enderscapes-delight:block/rubble_chitin_slab"
+    },
+    "type=double": {
+      "model": "enderscapes-delight:block/rubble_chitin_block"
+    },
+    "type=top": {
+      "model": "enderscapes-delight:block/rubble_chitin_slab_top"
+    }
+  }
+}

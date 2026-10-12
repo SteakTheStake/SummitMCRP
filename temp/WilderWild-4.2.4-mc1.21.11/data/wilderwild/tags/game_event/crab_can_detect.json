@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#wilderwild:crab_can_always_detect",
+    {
+      "id": "#minecraft:vibrations",
+      "required": false
+    }
+  ]
+}

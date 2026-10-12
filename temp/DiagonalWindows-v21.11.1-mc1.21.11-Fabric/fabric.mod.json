@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "diagonalwindows",
+  "version": "21.11.1",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "fuzs.diagonalwindows.fabric.client.DiagonalWindowsFabricClient"
+    ],
+    "main": [
+      "fuzs.diagonalwindows.fabric.DiagonalWindowsFabric"
+    ]
+  },
+  "mixins": [
+    "diagonalwindows.common.mixins.json",
+    "diagonalwindows.fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "\u003e\u003d1.21.11- \u003c1.21.12-",
+    "fabricloader": "\u003e\u003d0.18.0",
+    "diagonalblocks": "*",
+    "fabric-api": "\u003e\u003d0.140.0",
+    "forgeconfigapiport": "*",
+    "puzzleslib": "\u003e\u003d21.11.4"
+  },
+  "name": "Diagonal Windows",
+  "description": "Now windows are connecting diagonally, too?! This is getting out of hand!",
+  "authors": [
+    "Fuzs",
+    "XFactHD"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/diagonal-windows",
+    "sources": "https://github.com/Fuzss/diagonalwindows",
+    "issues": "https://github.com/Fuzss/diagonalwindows/issues"
+  },
+  "license": "MPL-2.0",
+  "icon": "mod_logo.png",
+  "accessWidener": "diagonalwindows.accesswidener",
+  "jars": [
+    {
+      "file": "META-INF/jars/diagonalblocks-fabric-21.11.1.jar"
+    }
+  ]
+}

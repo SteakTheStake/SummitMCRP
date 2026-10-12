@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "enderscapes-delight:rubble_chitin_block",
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:rubble_bricks"
+  }
+}

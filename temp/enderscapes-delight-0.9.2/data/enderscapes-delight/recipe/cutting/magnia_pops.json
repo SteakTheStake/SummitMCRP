@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "enderscape:blistered_magnia"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "enderscapes-delight:magnia_pops"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

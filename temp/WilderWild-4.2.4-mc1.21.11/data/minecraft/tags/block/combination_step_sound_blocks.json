@@ -1,0 +1,12 @@
+{
+  "values": [
+    "wilderwild:pollen",
+    "wilderwild:barnacles",
+    "wilderwild:auburn_moss_carpet",
+    "wilderwild:auburn_creeping_moss",
+    {
+      "id": "#wilderwild:leaf_litters",
+      "required": false
+    }
+  ]
+}

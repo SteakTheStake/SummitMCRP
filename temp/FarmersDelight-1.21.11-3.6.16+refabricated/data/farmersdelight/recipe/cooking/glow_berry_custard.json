@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "minecraft:glow_berries",
+    "#c:drinks/milk",
+    "#minecraft:eggs",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:glow_berry_custard"
+  }
+}

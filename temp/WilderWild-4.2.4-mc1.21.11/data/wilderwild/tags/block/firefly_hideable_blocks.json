@@ -1,0 +1,25 @@
+{
+  "values": [
+    "minecraft:short_grass",
+    "minecraft:tall_grass",
+    "minecraft:fern",
+    "minecraft:large_fern",
+    "minecraft:bush",
+    "wilderwild:frozen_short_grass",
+    "wilderwild:frozen_tall_grass",
+    "wilderwild:frozen_fern",
+    "wilderwild:frozen_large_fern",
+    "wilderwild:frozen_bush",
+    "minecraft:peony",
+    "minecraft:rose_bush",
+    "minecraft:dead_bush",
+    "wilderwild:cattail",
+    "wilderwild:milkweed",
+    "wilderwild:shrub",
+    "minecraft:firefly_bush",
+    {
+      "id": "#minecraft:small_flowers",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:mushroom_stem",
+    {
+      "id": "#minecraft:overworld_natural_logs",
+      "required": false
+    }
+  ]
+}

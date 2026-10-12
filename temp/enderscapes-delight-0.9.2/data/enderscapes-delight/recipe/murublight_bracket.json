@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "enderscapes-delight:murublight_bracket_crate"
+  ],
+  "result": {
+    "count": 9,
+    "id": "enderscape:murublight_bracket"
+  }
+}

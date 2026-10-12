@@ -1,0 +1,14 @@
+{
+  "asset_id": "wilderwild:entity/jellyfish/jellyfish_red",
+  "pearlescent": false,
+  "reproduction_food": "#wilderwild:jellyfish_food",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "#wilderwild:entity/variant/red_jellyfish"
+      },
+      "priority": 1
+    }
+  ]
+}

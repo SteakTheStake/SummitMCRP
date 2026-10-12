@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Specification-Title: Diagonal Fences
+Specification-Version: 21.11.1
+Specification-Vendor: Fuzs, XFactHD
+Implementation-Title: Diagonal Fences
+Implementation-Version: 21.11.1
+Implementation-Vendor: Fuzs, XFactHD
+Implementation-Timestamp: 2025-12-28T11:36:59+0100
+Implementation-URL: https://github.com/Fuzss/diagonalfences
+Build-Tool-Name: Architectury Loom
+Build-Tool-Version: 1.13.467
+Build-Jdk-Name: OpenJDK 64-Bit Server VM
+Build-Jdk-Version: 21.0.7+6-LTS
+Build-Jdk-Vendor: Microsoft
+Build-Jdk-Spec-Name: Java Virtual Machine Specification
+Build-Jdk-Spec-Version: 21
+Build-Jdk-Spec-Vendor: Oracle Corporation
+Build-Os-Name: Mac OS X (aarch64)
+Build-Os-Version: 13.7.8
+Fabric-Jar-Type: classes
+Fabric-Loom-Mixin-Remap-Type: static
+Fabric-Gradle-Version: 9.2.1
+Fabric-Loom-Version: 1.13.467
+Fabric-Mixin-Compile-Extensions-Version: 0.6.0
+Fabric-Minecraft-Version: 1.21.11
+Fabric-Tiny-Remapper-Version: 0.12.0
+Fabric-Loader-Version: 0.18.3
+Fabric-Mixin-Version: 0.16.5+mixin.0.8.7
+Fabric-Mixin-Group: net.fabricmc
+Fabric-Mapping-Namespace: intermediary
+

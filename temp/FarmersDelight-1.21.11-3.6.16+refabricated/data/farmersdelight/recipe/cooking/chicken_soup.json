@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    "#c:foods/raw_chicken",
+    "#c:crops/carrot",
+    "#c:foods/leafy_green",
+    "#c:foods/vegetable"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:chicken_soup"
+  }
+}

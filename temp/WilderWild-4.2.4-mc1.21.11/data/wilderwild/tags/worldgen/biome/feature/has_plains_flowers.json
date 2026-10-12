@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:plains",
+    {
+      "id": "wilderwild:sparse_forest",
+      "required": false
+    }
+  ]
+}

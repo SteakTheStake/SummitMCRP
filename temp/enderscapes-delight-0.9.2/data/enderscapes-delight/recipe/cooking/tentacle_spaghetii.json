@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "enderscape:murublight_bracket",
+    "enderscapes-delight:drifter_tentacles",
+    "farmersdelight:tomato_sauce"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "enderscapes-delight:drifter_tentacle_spaghetti"
+  }
+}

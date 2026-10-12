@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:jungle",
+    {
+      "id": "wilderwild:birch_jungle",
+      "required": false
+    }
+  ]
+}

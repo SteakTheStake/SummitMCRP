@@ -1,0 +1,26 @@
+{
+  "values": [
+    "minecraft:dark_forest",
+    "minecraft:flower_forest",
+    "minecraft:forest",
+    "minecraft:river",
+    "minecraft:frozen_river",
+    "minecraft:cherry_grove",
+    {
+      "id": "wilderwild:parched_forest",
+      "required": false
+    },
+    {
+      "id": "wilderwild:arid_forest",
+      "required": false
+    },
+    {
+      "id": "wilderwild:semi_birch_forest",
+      "required": false
+    },
+    {
+      "id": "wilderwild:sparse_forest",
+      "required": false
+    }
+  ]
+}

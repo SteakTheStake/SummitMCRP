@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "wilderwild:warm_river",
+      "required": false
+    },
+    {
+      "id": "wilderwild:mesoglea_caves",
+      "required": false
+    },
+    {
+      "id": "wilderwild:oasis",
+      "required": false
+    },
+    {
+      "id": "wilderwild:cypress_wetlands",
+      "required": false
+    }
+  ]
+}

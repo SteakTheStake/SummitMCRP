@@ -1,0 +1,9 @@
+{
+  "asset_id": "wilderwild:entity/firefly/firefly_on",
+  "name": "on",
+  "spawn_conditions": [
+    {
+      "priority": 1
+    }
+  ]
+}

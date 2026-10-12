@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "betterend:block/neon_cactus_slab"
+    },
+    "type=double": {
+      "model": "betterend:block/neon_cactus_block"
+    },
+    "type=top": {
+      "model": "betterend:block/neon_cactus_slab_top"
+    }
+  }
+}

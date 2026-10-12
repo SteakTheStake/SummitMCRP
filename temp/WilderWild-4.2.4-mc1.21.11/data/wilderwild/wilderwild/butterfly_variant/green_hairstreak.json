@@ -1,0 +1,13 @@
+{
+  "asset_id": "wilderwild:entity/butterfly/butterfly_green_hairstreak",
+  "name": "green_hairstreak",
+  "spawn_conditions": [
+    {
+      "condition": {
+        "type": "minecraft:biome",
+        "biomes": "#wilderwild:entity/variant/butterfly_green_hairstreak"
+      },
+      "priority": 1
+    }
+  ]
+}
